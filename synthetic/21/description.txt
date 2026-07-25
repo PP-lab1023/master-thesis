@@ -1,0 +1,45 @@
+instance_id: millar_data1_1_02
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 14
+  shift_types:
+    - day
+    - night
+    - off
+
+hard_constraints:
+  - A nurse must be assigned exactly one shift or one day off per day.
+  - Exactly 2 nurses must be assigned to the day shift on each day.
+  - Exactly 2 nurses must be assigned to the night shift on each day.
+  - Each nurse can work at most 7 shifts during the scheduling period.
+  - Each nurse must have at least 1 complete weekend off during the scheduling period.
+  - Each sequence of consecutive working days must contain at least 2 days.
+  - A nurse cannot rest for 5 consecutive days.
+  - A nurse cannot work for 5 consecutive days.
+  - A nurse cannot work 4 consecutive night shifts.
+  - A nurse cannot work a night shift followed immediately by a day shift.
+  - A nurse cannot have a single day off between two sequences of working days.
+
+all_preferences:
+  - id: P1
+    text: Nurse 1 prefers to work a night shift on Day 2.
+  - id: P2
+    text: Nurse 2 would like to avoid working on Day 4 because of an appointment.
+  - id: P3
+    text: Nurse 3 would rather work a day shift than a night shift on Day 5.
+  - id: P4
+    text: Nurse 4 prefers to take Days 6 and 7 off.
+  - id: P5
+    text: Nurse 5 would like to work a day shift on Day 8.
+  - id: P6
+    text: Nurse 6 prefers not to work a night shift on Day 9.
+  - id: P7
+    text: Nurse 7 would like to work a night shift on Day 11.
+  - id: P8
+    text: Nurse 8 prefers to have Day 12 off due to personal plans.
+  - id: P9
+    text: Nurse 3 prefers to work on the same shift as Nurse 4 on Day 13.
+  - id: P10
+    text: Nurse 5 does not want to work on the same shift as Nurse 8 on Day 14.

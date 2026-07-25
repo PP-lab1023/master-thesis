@@ -1,0 +1,300 @@
+instance_id: instance_18
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 22
+  number_of_days: 84
+  shift_types:
+    - morning
+    - day
+    - evening
+    - off
+  shift_duration_minutes:
+    morning: 480
+    day: 480
+    evening: 480
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - A day shift cannot be followed by a morning shift on the next day.
+  - An evening shift cannot be followed by a morning or day shift on the next day.
+  - Nurse 1 must have Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, Day 38, and Day 39 off.
+  - Nurse 2 must have Day 24, Day 34, Day 39, Day 40, Day 41, Day 42, Day 57, and Day 62 off.
+  - Nurse 3 must have Day 56, Day 57, Day 58, Day 59, Day 60, Day 61, Day 62, and Day 77 off.
+  - Nurse 4 must have Day 16, Day 17, Day 18, Day 19, Day 20, Day 21, Day 22, and Day 23 off.
+  - Nurse 5 must have Day 24, Day 25, Day 26, Day 27, Day 64, Day 68, Day 69, and Day 79 off.
+  - Nurse 6 must have Day 18, Day 19, Day 38, Day 39, Day 40, Day 41, Day 61, and Day 82 off.
+  - Nurse 7 must have Day 13, Day 14, Day 15, Day 16, Day 17, Day 18, Day 19, and Day 32 off.
+  - Nurse 8 must have Day 3, Day 4, Day 5, Day 12, Day 31, Day 50, Day 51, and Day 52 off.
+  - Nurse 9 must have Day 31, Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, and Day 38 off.
+  - Nurse 10 must have Day 5, Day 6, Day 7, Day 8, Day 9, Day 10, Day 11, and Day 15 off.
+  - Nurse 11 must have Day 38, Day 39, Day 40, Day 41, Day 42, Day 76, Day 77, and Day 78 off.
+  - Nurse 12 must have Day 21, Day 22, Day 23, Day 43, Day 44, Day 45, Day 46, and Day 47 off.
+  - Nurse 13 must have Day 20, Day 21, Day 39, Day 40, Day 41, Day 53, Day 54, and Day 55 off.
+  - Nurse 14 must have Day 9, Day 53, Day 54, Day 55, Day 56, Day 70, Day 71, and Day 72 off.
+  - Nurse 15 must have Day 6, Day 26, Day 50, Day 51, Day 52, Day 53, Day 54, and Day 55 off.
+  - Nurse 16 must have Day 33, Day 58, Day 59, Day 60, Day 71, Day 72, Day 73, and Day 74 off.
+  - Nurse 17 must have Day 54, Day 55, Day 56, Day 57, Day 58, Day 67, Day 79, and Day 80 off.
+  - Nurse 18 must have Day 27, Day 28, Day 29, Day 30, Day 31, Day 32, Day 33, and Day 34 off.
+  - Nurse 19 must have Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, Day 38, and Day 39 off.
+  - Nurse 20 must have Day 33, Day 40, Day 41, Day 42, Day 53, Day 54, Day 55, and Day 56 off.
+  - Nurse 21 must have Day 10, Day 11, Day 12, Day 13, Day 14, Day 49, Day 50, and Day 51 off.
+  - Nurse 22 must have Day 17, Day 47, Day 48, Day 49, Day 50, Day 51, Day 52, and Day 53 off.
+
+soft_constraints:
+  - Shift-request weights indicate preference importance: weight 1 is low, weight 2 is medium, and weight 3 is high.
+  - Violating a preferred shift-on request incurs the corresponding request weight.
+  - Assigning a shift covered by a shift-off request incurs the corresponding request weight.
+  - Coverage penalties are evaluated independently for every day and shift.
+  - Fixed days off and forbidden shift successions are hard constraints and cannot be violated.
+  - The objective is to minimize the total weighted penalty across all soft constraints.
+  - Nurses 1–18 should work between 24960 and 25920 minutes, work no more than 5 consecutive days, work at least 2 consecutive days, have at least 2 consecutive days off, and work at most 6 weekends.
+  - Nurses 19–22 should work between 23340 and 24300 minutes, work no more than 4 consecutive days, work at least 2 consecutive days, have at least 2 consecutive days off, and work at most 6 weekends.
+  - Nurse 1 may work only day, evening; maximum evening assignments are 43.
+  - Nurse 2 may work only morning, evening; maximum evening assignments are 43.
+  - Nurse 3 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 4 may work only morning, day.
+  - Nurse 5 may work only day, evening; maximum evening assignments are 43.
+  - Nurse 6 may work only day, evening; maximum evening assignments are 43.
+  - Nurse 7 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 8 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 9 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 10 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 11 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 12 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 13 may work only day, evening; maximum evening assignments are 43.
+  - Nurse 14 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 15 may work only morning, day.
+  - Nurse 16 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 17 may work only morning, evening; maximum evening assignments are 43.
+  - Nurse 18 may work only morning, day, evening; maximum evening assignments are 43.
+  - Nurse 19 may work only day.
+  - Nurse 20 may work only morning, day.
+  - Nurse 21 may work only morning, day, evening; maximum evening assignments are 40.
+  - Nurse 22 may work only day, evening; maximum evening assignments are 40.
+  - Nurse 1 prefers evening shifts on Days 18–22 (weight 2).
+  - Nurse 1 prefers evening shifts on Days 50–53 (weight 2).
+  - Nurse 1 prefers day shifts on Days 59–63 (weight 1).
+  - Nurse 1 prefers evening shifts on Days 67–69 (weight 3).
+  - Nurse 2 prefers evening shifts on Days 9–13 (weight 2).
+  - Nurse 2 prefers morning shifts on Days 17–19 (weight 2).
+  - Nurse 2 prefers evening shifts on Day 43 (weight 2).
+  - Nurse 3 prefers morning shifts on Days 29–30 (weight 3).
+  - Nurse 3 prefers day shifts on Days 35–36 (weight 1).
+  - Nurse 3 prefers day shifts on Day 41 (weight 2).
+  - Nurse 3 prefers morning shifts on Day 68 (weight 3).
+  - Nurse 3 prefers evening shifts on Days 81–83 (weight 1).
+  - Nurse 4 prefers day shifts on Day 2 (weight 2).
+  - Nurse 4 prefers morning shifts on Days 10–14 (weight 2).
+  - Nurse 4 prefers morning shifts on Days 24–26 (weight 3).
+  - Nurse 4 prefers day shifts on Days 40–42 (weight 3).
+  - Nurse 4 prefers morning shifts on Days 59–63 (weight 2).
+  - Nurse 5 prefers day shifts on Day 4 (weight 3).
+  - Nurse 5 prefers day shifts on Days 12–14 (weight 1).
+  - Nurse 5 prefers evening shifts on Days 35–37 (weight 2).
+  - Nurse 5 prefers evening shifts on Days 59–61 (weight 2).
+  - Nurse 5 prefers day shifts on Days 72–74 (weight 3).
+  - Nurse 6 prefers evening shifts on Days 22–25 (weight 3).
+  - Nurse 6 prefers day shifts on Day 30 (weight 2).
+  - Nurse 6 prefers evening shifts on Days 54–57 (weight 3).
+  - Nurse 6 prefers day shifts on Days 75–77 (weight 1).
+  - Nurse 7 prefers morning shifts on Days 20–23 (weight 1).
+  - Nurse 7 prefers morning shifts on Day 27 (weight 3).
+  - Nurse 7 prefers evening shifts on Days 46–50 (weight 2).
+  - Nurse 7 prefers morning shifts on Day 64 (weight 2).
+  - Nurse 8 prefers evening shifts on Days 24–25 (weight 3).
+  - Nurse 8 prefers morning shifts on Days 45–47 (weight 1).
+  - Nurse 8 prefers evening shifts on Day 53 (weight 3).
+  - Nurse 8 prefers day shifts on Days 69–70 (weight 3).
+  - Nurse 8 prefers day shifts on Day 77 (weight 3).
+  - Nurse 9 prefers morning shifts on Day 51 (weight 3).
+  - Nurse 9 prefers morning shifts on Days 59–63 (weight 1).
+  - Nurse 9 prefers evening shifts on Days 72–73 (weight 3).
+  - Nurse 9 prefers day shifts on Days 77–78 (weight 1).
+  - Nurse 10 prefers day shifts on Day 1 (weight 1).
+  - Nurse 10 prefers day shifts on Days 13–14 (weight 2).
+  - Nurse 10 prefers morning shifts on Days 32–35 (weight 2).
+  - Nurse 10 prefers evening shifts on Day 55 (weight 2).
+  - Nurse 10 prefers evening shifts on Days 60–63 (weight 3).
+  - Nurse 10 prefers morning shifts on Days 74–78 (weight 3).
+  - Nurse 11 prefers evening shifts on Days 10–13 (weight 2).
+  - Nurse 11 prefers day shifts on Days 21–24 (weight 1).
+  - Nurse 11 prefers evening shifts on Days 44–45 (weight 2).
+  - Nurse 11 prefers morning shifts on Days 56–59 (weight 1).
+  - Nurse 11 prefers day shifts on Days 64–65 (weight 3).
+  - Nurse 11 prefers evening shifts on Day 84 (weight 2).
+  - Nurse 12 prefers evening shifts on Days 2–6 (weight 3).
+  - Nurse 12 prefers morning shifts on Days 13–14 (weight 1).
+  - Nurse 12 prefers morning shifts on Days 25–29 (weight 3).
+  - Nurse 12 prefers evening shifts on Day 48 (weight 1).
+  - Nurse 12 prefers day shifts on Days 62–66 (weight 3).
+  - Nurse 13 prefers day shifts on Days 33–35 (weight 1).
+  - Nurse 13 prefers day shifts on Days 57–61 (weight 2).
+  - Nurse 13 prefers evening shifts on Days 75–79 (weight 1).
+  - Nurse 14 prefers morning shifts on Days 18–20 (weight 1).
+  - Nurse 14 prefers day shifts on Days 26–28 (weight 1).
+  - Nurse 14 prefers evening shifts on Days 63–65 (weight 1).
+  - Nurse 14 prefers day shifts on Days 75–78 (weight 2).
+  - Nurse 15 prefers day shifts on Days 16–20 (weight 1).
+  - Nurse 15 prefers morning shifts on Days 31–32 (weight 3).
+  - Nurse 15 prefers morning shifts on Days 41–44 (weight 1).
+  - Nurse 15 prefers day shifts on Days 59–61 (weight 3).
+  - Nurse 15 prefers morning shifts on Days 69–70 (weight 2).
+  - Nurse 15 prefers morning shifts on Days 77–81 (weight 2).
+  - Nurse 16 prefers day shifts on Days 12–13 (weight 2).
+  - Nurse 16 prefers day shifts on Days 18–20 (weight 2).
+  - Nurse 16 prefers day shifts on Days 46–48 (weight 1).
+  - Nurse 16 prefers day shifts on Days 55–56 (weight 1).
+  - Nurse 16 prefers evening shifts on Days 63–64 (weight 3).
+  - Nurse 16 prefers morning shifts on Days 79–82 (weight 3).
+  - Nurse 17 prefers evening shifts on Days 12–13 (weight 2).
+  - Nurse 17 prefers morning shifts on Days 20–23 (weight 1).
+  - Nurse 17 prefers morning shifts on Days 31–33 (weight 1).
+  - Nurse 17 prefers evening shifts on Days 39–42 (weight 2).
+  - Nurse 17 prefers evening shifts on Days 60–61 (weight 3).
+  - Nurse 17 prefers morning shifts on Days 69–72 (weight 3).
+  - Nurse 18 prefers evening shifts on Days 4–8 (weight 1).
+  - Nurse 18 prefers day shifts on Day 13 (weight 1).
+  - Nurse 18 prefers day shifts on Days 47–50 (weight 1).
+  - Nurse 18 prefers morning shifts on Days 59–62 (weight 2).
+  - Nurse 18 prefers morning shifts on Days 75–79 (weight 1).
+  - Nurse 19 prefers day shifts on Days 16–17 (weight 2).
+  - Nurse 19 prefers day shifts on Day 41 (weight 1).
+  - Nurse 19 prefers day shifts on Day 46 (weight 2).
+  - Nurse 19 prefers day shifts on Days 65–68 (weight 3).
+  - Nurse 19 prefers day shifts on Days 75–79 (weight 3).
+  - Nurse 20 prefers day shifts on Day 6 (weight 3).
+  - Nurse 20 prefers morning shifts on Day 12 (weight 1).
+  - Nurse 20 prefers day shifts on Days 16–18 (weight 3).
+  - Nurse 20 prefers day shifts on Day 28 (weight 1).
+  - Nurse 20 prefers day shifts on Days 76–78 (weight 2).
+  - Nurse 21 prefers day shifts on Day 39 (weight 3).
+  - Nurse 21 prefers morning shifts on Days 45–48 (weight 2).
+  - Nurse 21 prefers morning shifts on Day 59 (weight 1).
+  - Nurse 21 prefers day shifts on Day 64 (weight 2).
+  - Nurse 21 prefers day shifts on Days 69–71 (weight 3).
+  - Nurse 22 prefers evening shifts on Days 8–9 (weight 2).
+  - Nurse 22 prefers day shifts on Days 20–22 (weight 3).
+  - Nurse 22 prefers day shifts on Days 28–32 (weight 1).
+  - Nurse 22 prefers evening shifts on Day 39 (weight 1).
+  - Nurse 22 prefers evening shifts on Day 43 (weight 3).
+  - Nurse 22 prefers day shifts on Days 58–60 (weight 2).
+  - Nurse 22 prefers day shifts on Days 80–81 (weight 1).
+  - Nurse 1 prefers not to work day shifts on Day 7 (weight 1).
+  - Nurse 1 prefers not to work day shifts on Day 83 (weight 2).
+  - Nurse 2 prefers not to work evening shifts on Days 49–53 (weight 1).
+  - Nurse 2 prefers not to work morning shifts on Days 65–66 (weight 3).
+  - Nurse 2 prefers not to work morning shifts on Days 77–79 (weight 1).
+  - Nurse 3 prefers not to work evening shifts on Days 2–4 (weight 3).
+  - Nurse 3 prefers not to work morning shifts on Days 10–13 (weight 1).
+  - Nurse 3 prefers not to work day shifts on Days 18–21 (weight 3).
+  - Nurse 3 prefers not to work morning shifts on Days 53–54 (weight 3).
+  - Nurse 6 prefers not to work evening shifts on Days 13–14 (weight 1).
+  - Nurse 7 prefers not to work evening shifts on Days 1–4 (weight 3).
+  - Nurse 7 prefers not to work morning shifts on Days 54–58 (weight 1).
+  - Nurse 7 prefers not to work day shifts on Days 71–72 (weight 2).
+  - Nurse 8 prefers not to work morning shifts on Day 32 (weight 1).
+  - Nurse 9 prefers not to work morning shifts on Days 42–44 (weight 1).
+  - On Day 1, the target coverage for morning is 5 nurses.
+  - On Day 1, the target coverage for day is 4 nurses.
+  - On Day 1, the target coverage for evening is 6 nurses.
+  - On Day 2, the target coverage for morning is 5 nurses.
+  - On Day 2, the target coverage for day is 3 nurses.
+  - On Day 2, the target coverage for evening is 7 nurses.
+  - On Day 3, the target coverage for morning is 5 nurses.
+  - On Day 3, the target coverage for day is 3 nurses.
+  - On Day 3, the target coverage for evening is 5 nurses.
+  - On Day 4, the target coverage for morning is 6 nurses.
+  - On Day 4, the target coverage for day is 3 nurses.
+  - On Day 4, the target coverage for evening is 7 nurses.
+  - On Day 5, the target coverage for morning is 7 nurses.
+  - On Day 5, the target coverage for day is 3 nurses.
+  - On Day 5, the target coverage for evening is 5 nurses.
+  - On Day 6, the target coverage for morning is 5 nurses.
+  - On Day 6, the target coverage for day is 3 nurses.
+  - On Day 6, the target coverage for evening is 3 nurses.
+  - On Day 7, the target coverage for morning is 5 nurses.
+  - On Day 7, the target coverage for day is 3 nurses.
+  - On Day 7, the target coverage for evening is 7 nurses.
+  - On Day 8, the target coverage for morning is 5 nurses.
+  - On Day 8, the target coverage for day is 4 nurses.
+  - On Day 8, the target coverage for evening is 5 nurses.
+  - On Day 9, the target coverage is 5 morning, 3 day, and 4 evening nurses.
+  - On Day 10, the target coverage is 6 morning, 3 day, and 6 evening nurses.
+  - On Day 11, the target coverage is 7 morning, 4 day, and 5 evening nurses.
+  - On Day 12, the target coverage is 7 morning, 4 day, and 6 evening nurses.
+  - On Day 13, the target coverage is 4 morning, 2 day, and 5 evening nurses.
+  - On Day 14, the target coverage is 3 morning, 3 day, and 6 evening nurses.
+  - On Day 15, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 16, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 17, the target coverage is 5 morning, 3 day, and 6 evening nurses.
+  - On Day 18, the target coverage is 4 morning, 2 day, and 4 evening nurses.
+  - On Day 19, the target coverage is 3 morning, 2 day, and 7 evening nurses.
+  - On Day 20, the target coverage is 5 morning, 4 day, and 5 evening nurses.
+  - On Day 21, the target coverage is 3 morning, 3 day, and 6 evening nurses.
+  - On Day 22, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 23, the target coverage is 3 morning, 3 day, and 7 evening nurses.
+  - On Day 24, the target coverage is 4 morning, 3 day, and 6 evening nurses.
+  - On Day 25, the target coverage is 7 morning, 5 day, and 5 evening nurses.
+  - On Day 26, the target coverage is 5 morning, 3 day, and 6 evening nurses.
+  - On Day 27, the target coverage is 4 morning, 5 day, and 5 evening nurses.
+  - On Day 28, the target coverage is 3 morning, 3 day, and 4 evening nurses.
+  - On Day 29, the target coverage is 6 morning, 4 day, and 7 evening nurses.
+  - On Day 30, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 31, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 32, the target coverage is 6 morning, 4 day, and 5 evening nurses.
+  - On Day 33, the target coverage is 5 morning, 3 day, and 4 evening nurses.
+  - On Day 34, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 35, the target coverage is 7 morning, 3 day, and 5 evening nurses.
+  - On Day 36, the target coverage is 6 morning, 4 day, and 5 evening nurses.
+  - On Day 37, the target coverage is 6 morning, 3 day, and 5 evening nurses.
+  - On Day 38, the target coverage is 7 morning, 4 day, and 5 evening nurses.
+  - On Day 39, the target coverage is 5 morning, 4 day, and 5 evening nurses.
+  - On Day 40, the target coverage is 4 morning, 4 day, and 6 evening nurses.
+  - On Day 41, the target coverage is 4 morning, 4 day, and 6 evening nurses.
+  - On Day 42, the target coverage is 5 morning, 3 day, and 3 evening nurses.
+  - On Day 43, the target coverage is 7 morning, 5 day, and 6 evening nurses.
+  - On Day 44, the target coverage is 5 morning, 5 day, and 5 evening nurses.
+  - On Day 45, the target coverage is 6 morning, 3 day, and 5 evening nurses.
+  - On Day 46, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 47, the target coverage is 6 morning, 3 day, and 5 evening nurses.
+  - On Day 48, the target coverage is 5 morning, 2 day, and 4 evening nurses.
+  - On Day 49, the target coverage is 4 morning, 3 day, and 5 evening nurses.
+  - On Day 50, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 51, the target coverage is 6 morning, 4 day, and 5 evening nurses.
+  - On Day 52, the target coverage is 5 morning, 3 day, and 4 evening nurses.
+  - On Day 53, the target coverage is 5 morning, 3 day, and 7 evening nurses.
+  - On Day 54, the target coverage is 6 morning, 2 day, and 5 evening nurses.
+  - On Day 55, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 56, the target coverage is 5 morning, 3 day, and 6 evening nurses.
+  - On Day 57, the target coverage is 7 morning, 2 day, and 5 evening nurses.
+  - On Day 58, the target coverage is 7 morning, 3 day, and 4 evening nurses.
+  - On Day 59, the target coverage is 6 morning, 2 day, and 6 evening nurses.
+  - On Day 60, the target coverage is 7 morning, 1 day, and 7 evening nurses.
+  - On Day 61, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 62, the target coverage is 5 morning, 1 day, and 7 evening nurses.
+  - On Day 63, the target coverage is 5 morning, 1 day, and 4 evening nurses.
+  - On Day 64, the target coverage is 5 morning, 1 day, and 5 evening nurses.
+  - On Day 65, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 66, the target coverage is 6 morning, 2 day, and 5 evening nurses.
+  - On Day 67, the target coverage is 6 morning, 4 day, and 3 evening nurses.
+  - On Day 68, the target coverage is 4 morning, 1 day, and 4 evening nurses.
+  - On Day 69, the target coverage is 6 morning, 3 day, and 4 evening nurses.
+  - On Day 70, the target coverage is 5 morning, 4 day, and 4 evening nurses.
+  - On Day 71, the target coverage is 7 morning, 2 day, and 4 evening nurses.
+  - On Day 72, the target coverage is 3 morning, 1 day, and 4 evening nurses.
+  - On Day 73, the target coverage is 5 morning, 3 day, and 7 evening nurses.
+  - On Day 74, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 75, the target coverage is 5 morning, 3 day, and 4 evening nurses.
+  - On Day 76, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 77, the target coverage is 5 morning, 3 day, and 5 evening nurses.
+  - On Day 78, the target coverage is 5 morning, 3 day, and 6 evening nurses.
+  - On Day 79, the target coverage is 4 morning, 1 day, and 5 evening nurses.
+  - On Day 80, the target coverage is 4 morning, 3 day, and 5 evening nurses.
+  - On Day 81, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 82, the target coverage is 5 morning, 2 day, and 5 evening nurses.
+  - On Day 83, the target coverage is 6 morning, 3 day, and 5 evening nurses.
+  - On Day 84, the target coverage is 4 morning, 3 day, and 7 evening nurses.
+  - For every coverage target, understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.

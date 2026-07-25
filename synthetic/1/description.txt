@@ -1,0 +1,46 @@
+instance_id: data_01
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 14
+  shift_types:
+    - day
+    - night
+    - off
+
+hard_constraints:
+  - A nurse must be assigned 1 shift per day.
+  - The nurse has 7 days off during the scheduling period.
+  - The nurse has at least 3 night shifts.
+  - The nurse has at most 4 night shifts.
+  - The nurse has at least 3 day shifts.
+  - The nurse has at most 4 day shifts.
+  - The nurse cannot work 5 day shifts in a row.
+  - The nurse cannot rest for 5 days in a row.
+  - The nurse cannot work 5 night shifts in a row. 
+  - The nurse cannot work 4 night shifts in a row.
+  - A nurse cannot work a night shift followed by a day shift.
+
+all_preferences:
+  - id: P1
+    text: Nurse 1 would like to take a break on Day 11 after several working days.
+  - id: P2
+    text: Nurse 2 would like to avoid working on Day 3 as she has an appointment.
+  - id: P3
+    text: Nurse 3 prefers not to be scheduled for a night shift on Day 5.
+  - id: P4
+    text: Nurse 4 needs to take a rest on Day 8 to attend a family event.
+  - id: P5
+    text: Nurse 5 would rather work a night shift than a day shift on Day 8.
+  - id: P6
+    text: Nurse 6 prefers to take a rest on Day 6 due to fatigue.
+  - id: P7
+    text: Nurse 7 would like to keep daytime on Day 2 free for personal reasons.
+  - id: P8
+    text: Nurse 8 prefers to take a 2-day rest starting from Day 10.
+  - id: P9
+    text: Nurse 2 hopes to avoid a night shift on Day 12 because of health reasons.
+  - id: P10
+    text: Nurse 1 doesn't want to work on the same shift with nurse 6 because of bad relationship.
+

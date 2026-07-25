@@ -1,0 +1,263 @@
+instance_id: instance_12
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 60
+  number_of_days: 28
+  shift_types:
+    - morning_1
+    - morning_2
+    - morning_3
+    - day_1
+    - day_2
+    - day_3
+    - evening_1
+    - evening_2
+    - evening_3
+    - night_1
+    - off
+  shift_duration_minutes:
+    morning_1: 480
+    morning_2: 480
+    morning_3: 480
+    day_1: 480
+    day_2: 480
+    day_3: 480
+    evening_1: 480
+    evening_2: 480
+    evening_3: 480
+    night_1: 480
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - A day_1, day_2, or day_3 shift cannot be followed by a morning_1, morning_2, or morning_3 shift on the next day.
+  - An evening_1, evening_2, or evening_3 shift cannot be followed by a morning or day shift on the next day.
+  - A night_1 shift cannot be followed by a morning, day, or evening shift on the next day.
+  - Nurse 1 must have Days 8 and 25 off.
+  - Nurse 2 must have Days 26 and 27 off.
+  - Nurse 3 must have Days 4 and 17 off.
+  - Nurse 4 must have Days 12 and 13 off.
+  - Nurse 5 must have Days 2 and 6 off.
+  - Nurse 6 must have Days 11 and 18 off.
+  - Nurse 7 must have Days 14 and 28 off.
+  - Nurse 8 must have Days 9 and 23 off.
+  - Nurse 9 must have Days 1 and 24 off.
+  - Nurse 10 must have Days 11 and 14 off.
+  - Nurse 11 must have Days 1 and 14 off.
+  - Nurse 12 must have Days 25 and 26 off.
+  - Nurse 13 must have Days 26 and 27 off.
+  - Nurse 14 must have Days 13 and 28 off.
+  - Nurse 15 must have Days 4 and 26 off.
+  - Nurse 16 must have Days 8 and 9 off.
+  - Nurse 17 must have Days 10 and 11 off.
+  - Nurse 18 must have Days 17 and 18 off.
+  - Nurse 19 must have Days 6 and 16 off.
+  - Nurse 20 must have Days 3 and 18 off.
+  - Nurse 21 must have Days 23 and 24 off.
+  - Nurse 22 must have Days 24 and 25 off.
+  - Nurse 23 must have Days 22 and 27 off.
+  - Nurse 24 must have Days 11 and 23 off.
+  - Nurse 25 must have Days 8 and 15 off.
+  - Nurse 26 must have Days 7 and 8 off.
+  - Nurse 27 must have Days 20 and 21 off.
+  - Nurse 28 must have Days 11 and 16 off.
+  - Nurse 29 must have Days 6 and 18 off.
+  - Nurse 30 must have Days 6 and 21 off.
+  - Nurse 31 must have Days 25 and 26 off.
+  - Nurse 32 must have Days 24 and 25 off.
+  - Nurse 33 must have Days 10 and 22 off.
+  - Nurse 34 must have Days 13 and 18 off.
+  - Nurse 35 must have Days 15 and 26 off.
+  - Nurse 36 must have Days 12 and 13 off.
+  - Nurse 37 must have Days 7 and 8 off.
+  - Nurse 38 must have Days 1 and 25 off.
+  - Nurse 39 must have Days 10 and 17 off.
+  - Nurse 40 must have Days 14 and 15 off.
+  - Nurse 41 must have Days 1 and 10 off.
+  - Nurse 42 must have Days 4 and 24 off.
+  - Nurse 43 must have Days 4 and 19 off.
+  - Nurse 44 must have Days 5 and 6 off.
+  - Nurse 45 must have Days 4 and 5 off.
+  - Nurse 46 must have Days 11 and 15 off.
+  - Nurse 47 must have Days 19 and 20 off.
+  - Nurse 48 must have Days 3 and 4 off.
+  - Nurse 49 must have Days 16 and 17 off.
+  - Nurse 50 must have Days 20 and 21 off.
+  - Nurse 51 must have Days 9 and 17 off.
+  - Nurse 52 must have Days 20 and 21 off.
+  - Nurse 53 must have Days 5 and 6 off.
+  - Nurse 54 must have Days 19 and 20 off.
+  - Nurse 55 must have Days 2 and 3 off.
+  - Nurse 56 must have Days 15 and 18 off.
+  - Nurse 57 must have Days 4 and 5 off.
+  - Nurse 58 must have Days 25 and 26 off.
+  - Nurse 59 must have Days 1 and 27 off.
+  - Nurse 60 must have Days 1 and 2 off.
+
+soft_constraints:
+  - Nurses 1 to 40 should work between 7560 and 8640 minutes during the scheduling period.
+  - Nurses 1 to 40 should not work more than 5 consecutive days.
+  - Each working period of Nurses 1 to 40 should contain at least 2 consecutive working days.
+  - Each rest period of Nurses 1 to 40 should contain at least 2 consecutive days off.
+  - Nurses 1 to 40 should work at most 2 weekends.
+  - Nurses 41 to 50 should work between 7560 and 8640 minutes during the scheduling period.
+  - Nurses 41 to 50 should not work more than 6 consecutive days.
+  - Each working period of Nurses 41 to 50 should contain at least 2 consecutive working days.
+  - Each rest period of Nurses 41 to 50 should contain at least 3 consecutive days off.
+  - Nurses 41 to 50 should work at most 2 weekends.
+  - Nurses 51 to 60 should work between 4080 and 5160 minutes during the scheduling period.
+  - Nurses 51 to 60 should not work more than 5 consecutive days.
+  - Each working period of Nurses 51 to 60 should contain at least 2 consecutive working days.
+  - Each rest period of Nurses 51 to 60 should contain at least 2 consecutive days off.
+  - Nurses 51 to 60 should work at most 3 weekends.
+  - Nurse 1 can work morning_1, morning_2, morning_3, day_1, day_2, evening_2, and evening_3 shifts.
+  - Nurse 2 can work morning_1, morning_2, day_1, day_3, evening_1, and evening_2 shifts.
+  - Nurse 3 can work morning_3, day_2, day_3, evening_1, and evening_2 shifts.
+  - Nurse 4 can work morning_1, morning_2, morning_3, all day shifts, evening_2, and evening_3 shifts.
+  - Nurse 5 can work morning_1, morning_3, all day shifts, all evening shifts, and at most 4 night shifts.
+  - Nurse 6 can work morning_1, morning_3, day_1, day_2, evening_1, evening_2, and at most 4 night shifts.
+  - Nurse 7 can work morning_1, morning_3, all day shifts, evening_1, and evening_2 shifts.
+  - Nurse 8 can work all morning shifts, day_1, and all evening shifts.
+  - Nurse 9 can work morning_2, morning_3, day_2, day_3, evening_2, and at most 4 night shifts.
+  - Nurse 10 can work all morning shifts, day_2, day_3, evening_1, evening_3, and at most 4 night shifts.
+  - Nurse 11 can work morning_2, morning_3, day_2, day_3, and evening_2 shifts.
+  - Nurse 12 can work morning_1, morning_3, day_2, evening_2, and at most 4 night shifts.
+  - Nurse 13 can work morning_2, morning_3, day_2, day_3, evening_1, and evening_2 shifts.
+  - Nurse 14 can work morning_1, morning_3, all day shifts, evening_1, evening_3, and at most 4 night shifts.
+  - Nurse 15 can work morning_1, morning_2, day_2, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 16 can work morning_3, day_1, evening_2, and at most 4 night shifts.
+  - Nurse 17 can work morning_3, day_2, evening_1, and evening_3 shifts.
+  - Nurse 18 can work all morning shifts, day_3, evening_1, and evening_2 shifts.
+  - Nurse 19 can work morning_1, morning_3, day_2, and all evening shifts, with at most 4 night shifts.
+  - Nurse 20 can work all morning shifts, day_2, day_3, all evening shifts, and at most 4 night shifts.
+  - Nurse 21 can work morning_1, morning_3, day_3, evening_1, evening_2, and at most 4 night shifts.
+  - Nurse 22 can work morning_2, morning_3, day_1, day_3, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 23 can work morning_1, morning_3, day_2, evening_1, and evening_3 shifts.
+  - Nurse 24 can work morning_1, morning_3, day_1, day_2, and evening_3 shifts.
+  - Nurse 25 can work morning_1, morning_3, day_3, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 26 can work morning_1, morning_3, all day shifts, evening_1, evening_3, and at most 4 night shifts.
+  - Nurse 27 can work morning_3, day_1, day_3, all evening shifts, and at most 4 night shifts.
+  - Nurse 28 can work morning_1, morning_3, day_2, and all evening shifts, with at most 4 night shifts.
+  - Nurse 29 can work morning_3, all day shifts, evening_1, and evening_2 shifts.
+  - Nurse 30 can work morning_1, day_1, day_2, day_3, and evening_1 shifts.
+  - Nurse 31 can work morning_2, all day shifts, evening_1, evening_3, and at most 4 night shifts.
+  - Nurse 32 can work all morning shifts, day_1, evening_1, evening_2, and at most 4 night shifts.
+  - Nurse 33 can work morning_1, morning_3, day_2, day_3, all evening shifts, and at most 4 night shifts.
+  - Nurse 34 can work morning_2, morning_3, day_1, day_2, and all evening shifts, with at most 4 night shifts.
+  - Nurse 35 can work all morning shifts, day_3, and all evening shifts.
+  - Nurse 36 can work all morning shifts, all day shifts, evening_1, and evening_2 shifts.
+  - Nurse 37 can work morning_2, day_1, day_2, evening_1, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 38 can work morning_2, morning_3, day_1, evening_1, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 39 can work all morning shifts, day_3, and all evening shifts.
+  - Nurse 40 can work all morning shifts, all day shifts, evening_1, and evening_2 shifts.
+  - Nurse 41 can work morning_1, morning_3, day_2, day_3, all evening shifts, and at most 4 night shifts.
+  - Nurse 42 can work morning_1, morning_3, all day shifts, evening_1, and at most 4 night shifts.
+  - Nurse 43 can work morning_2, morning_3, day_2, day_3, all evening shifts, and at most 4 night shifts.
+  - Nurse 44 can work morning_1, day_2, day_3, evening_1, evening_2, and at most 4 night shifts.
+  - Nurse 45 can work morning_2, morning_3, day_2, and all evening shifts.
+  - Nurse 46 can work all morning shifts, all day shifts, evening_1, evening_2, and at most 4 night shifts.
+  - Nurse 47 can work morning_2, day_1, day_3, evening_3, and at most 4 night shifts.
+  - Nurse 48 can work morning_2, day_1, day_2, evening_1, evening_2, evening_3, and at most 4 night shifts.
+  - Nurse 49 can work morning_2, morning_3, day_3, evening_1, and evening_2 shifts.
+  - Nurse 50 can work morning_1, morning_3, all day shifts, evening_1, and evening_2 shifts.
+  - Nurse 51 can work morning_3 and all day shifts.
+  - Nurse 52 can work morning_1, morning_3, day_3, evening_2, and evening_3 shifts.
+  - Nurse 53 can work morning_2, morning_3, day_1, and all evening shifts.
+  - Nurse 54 can work morning_2, morning_3, day_2, day_3, evening_2, and at most 2 night shifts.
+  - Nurse 55 can work all morning shifts, day_1, day_3, evening_1, and evening_2 shifts.
+  - Nurse 56 can work all shift types and should work no more than 2 night shifts.
+  - Nurse 57 can work morning_2, morning_3, all day shifts, evening_1, evening_3, and at most 2 night shifts.
+  - Nurse 58 can work morning_1, day_1, day_3, evening_1, and at most 2 night shifts.
+  - Nurse 59 can work morning_1, morning_2, day_1, day_2, evening_1, evening_2, and at most 2 night shifts.
+  - Nurse 60 can work all morning shifts, day_1, day_3, and all evening shifts.
+  - Nurse 1 prefers morning_1 shifts on Days 2–6 and a morning_3 shift on Day 19.
+  - Nurse 2 prefers morning_2 shifts on Days 11–15.
+  - Nurse 4 prefers evening_2 shifts on Days 21–23.
+  - Nurse 5 prefers day_3 shifts on Days 16–18 and a morning_3 shift on Day 24.
+  - Nurse 6 prefers evening_1 shifts on Days 8–9, morning_1 shifts on Days 14–15, and a day_1 shift on Day 19.
+  - Nurse 7 prefers morning_3 shifts on Days 6–10 and day_3 shifts on Days 18–19.
+  - Nurse 8 prefers morning_3 shifts on Days 1–3 and evening_3 shifts on Days 17–19.
+  - Nurse 9 prefers evening_2 shifts on Days 10–14 and morning_3 shifts on Days 25–26.
+  - Nurse 10 prefers morning_2 shifts on Days 16–17 and night shifts on Days 22–24.
+  - Nurse 14 prefers morning_1 shifts on Days 6–7, a day_2 shift on Day 15, and a night shift on Day 20.
+  - Nurse 15 prefers evening_3 shifts on Days 10–14, morning_2 shifts on Day 18, and a night shift on Day 25.
+  - Nurse 16 prefers morning_3 shifts on Days 2–4, Days 10–14, and day_1 shifts on Days 21–23.
+  - Nurse 20 prefers evening_3 shifts on Days 4–8, Days 10–13, and Day 22.
+  - Nurse 21 prefers evening_3 shifts on Days 4–8 and Day 22.
+  - Nurse 22 prefers morning_1 shifts on Days 4–6, morning_3 shifts on Days 12–14, and a night shift on Day 20.
+  - Nurse 23 prefers evening_2 shifts on Days 4–6, evening_3 shifts on Days 11 and 21–23, and a night shift on Day 20.
+  - Nurse 24 prefers morning_3 shifts on Days 8–9 and a day_2 shift on Day 15.
+  - Nurse 25 prefers morning_3 shifts on Days 4, 12–15, and day_1 shifts on Days 21–24.
+  - Nurse 27 prefers day_3 shifts on Days 13–15.
+  - Nurse 29 prefers day_3 shifts on Days 13–15.
+  - Nurse 31 prefers day_2 shifts on Days 1–6, evening_3 shifts on Day 10, and evening_1 shifts on Days 19–20.
+  - Nurse 32 prefers day_1 shifts on Days 4–8, an evening_1 shift on Day 15, and day_1 shifts on Days 21–23.
+  - Nurse 33 prefers morning_3 shifts on Days 13–14 and a day_3 shift on Day 24.
+  - Nurse 34 prefers morning_3 shifts on Days 2–3 and Days 15–16.
+  - Nurse 35 prefers evening_2 shifts on Days 9–12 and Days 18–22.
+  - Nurse 36 prefers evening_3 shifts on Days 13–16 and morning_2 shifts on Days 25–26.
+  - Nurse 37 prefers day_1 shifts on Days 3–4 and morning_3 shifts on Day 17 and Days 27–28.
+  - Nurse 38 prefers morning_2 shifts on Days 3–4, evening_3 shifts on Days 12–13, and evening_1 shifts on Days 19–23.
+  - Nurse 39 prefers morning_3 shifts on Days 9–12 and evening_1 shifts on Days 17–19.
+  - Nurse 41 prefers a night shift on Day 4, a morning_3 shift on Day 14, and evening_1 shifts on Days 23–27.
+  - Nurse 44 prefers evening_1 shifts on Days 21–24.
+  - Nurse 46 prefers night shifts on Days 16–18.
+  - Nurse 48 prefers morning_2 shifts on Days 24–26.
+  - Nurse 51 prefers day_2 shifts on Days 2 and 18, and day_1 shifts on Days 22–24.
+  - Nurse 52 prefers morning_3 shifts on Days 1–5 and a morning_1 shift on Day 15.
+  - Nurse 53 prefers morning_3 shifts on Days 8–12 and evening_3 shifts on Days 17–19 and 23–26.
+  - Nurse 54 prefers a night shift on Day 1 and day_2 shifts on Days 5–9.
+  - Nurse 55 prefers morning_3 shifts on Days 13–16 and morning_1 shifts on Days 22–23.
+  - Nurse 57 prefers day_1 shifts on Days 7–8 and morning_2 shifts on Days 16–20.
+  - Nurse 58 prefers day_2 shifts on Days 17–19.
+  - Nurse 59 prefers a day_3 shift on Day 3, morning_1 shifts on Days 7–10, and evening_1 shifts on Days 16–17.
+  - Nurse 60 prefers evening_2 shifts on Days 4–5.
+  - Nurse 1 prefers not to work morning_3 shifts on Days 13–15.
+  - Nurse 4 prefers not to work morning_2 shifts on Days 1–4.
+  - Nurse 5 prefers not to work evening_3 shifts on Days 8–12.
+  - Nurse 10 prefers not to work day_2 shifts on Days 2–4.
+  - Nurse 13 prefers not to work evening_2 shifts on Days 3–7.
+  - Nurse 17 prefers not to work evening_3 shifts on Days 21–25.
+  - Nurse 19 prefers not to work evening_1 shifts on Days 8–10.
+  - Nurse 25 prefers not to work night shifts on Days 4–6.
+  - Nurse 28 prefers not to work morning_1 shifts on Days 22–25.
+  - Nurse 31 prefers not to work day_2 shifts on Days 13–16.
+  - Nurse 38 prefers not to work morning_3 shifts on Days 9–13.
+  - Nurse 40 prefers not to work evening_2 shifts on Days 7–11.
+  - Nurse 43 prefers not to work evening_2 shifts on Days 10–13.
+  - Nurse 48 prefers not to work day_2 shifts on Days 8–12.
+  - Nurse 51 prefers not to work day_1 shifts on Days 11–14.
+  - Nurse 54 prefers not to work night shifts on Days 21–23.
+  - Nurse 57 prefers not to work morning_3 shifts on Days 4–7.
+  - Nurse 60 prefers not to work morning_1 shifts on Days 13–17.
+  - On Day 1, the target coverage is 5 morning_1, 3 morning_2, 5 morning_3, 3 day_1, 5 day_2, 4 day_3, 4 evening_1, 5 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 2, the target coverage is 4 morning_1, 4 morning_2, 3 morning_3, 4 day_1, 4 day_2, 2 day_3, 4 evening_1, 5 evening_2, 6 evening_3, and 3 night_1 shifts.
+  - On Day 3, the target coverage is 2 morning_1, 5 morning_2, 4 morning_3, 4 day_1, 4 day_2, 3 day_3, 6 evening_1, 3 evening_2, 4 evening_3, and 5 night_1 shifts.
+  - On Day 4, the target coverage is 3 morning_1, 4 morning_2, 4 morning_3, 3 day_1, 4 day_2, 3 day_3, 4 evening_1, 4 evening_2, 4 evening_3, and 3 night_1 shifts.
+  - On Day 5, the target coverage is 4 morning_1, 4 morning_2, 6 morning_3, 4 day_1, 4 day_2, 4 day_3, 4 evening_1, 4 evening_2, 4 evening_3, and 3 night_1 shifts.
+  - On Day 6, the target coverage is 3 morning_1, 5 morning_2, 5 morning_3, 2 day_1, 3 day_2, 5 day_3, 5 evening_1, 5 evening_2, 5 evening_3, and 4 night_1 shifts.
+  - On Day 7, the target coverage is 2 morning_1, 3 morning_2, 2 morning_3, 2 day_1, 2 day_2, 5 day_3, 3 evening_1, 5 evening_2, 3 evening_3, and 2 night_1 shifts.
+  - On Day 8, the target coverage is 6 morning_1, 4 morning_2, 3 morning_3, 6 day_1, 6 day_2, 6 day_3, 5 evening_1, 5 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 9, the target coverage is 3 morning_1, 3 morning_2, 3 morning_3, 5 day_1, 2 day_2, 4 day_3, 4 evening_1, 3 evening_2, 3 evening_3, and 3 night_1 shifts.
+  - On Day 10, the target coverage is 3 morning_1, 2 morning_2, 3 morning_3, 3 day_1, 5 day_2, 3 day_3, 2 evening_1, 2 evening_2, 4 evening_3, and 3 night_1 shifts.
+  - On Day 11, the target coverage is 3 morning_1, 5 morning_2, 2 morning_3, 4 day_1, 3 day_2, 3 day_3, 2 evening_1, 3 evening_2, 3 evening_3, and 3 night_1 shifts.
+  - On Day 12, the target coverage is 4 morning_1, 4 morning_2, 3 morning_3, 4 day_1, 5 day_2, 3 day_3, 4 evening_1, 4 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 13, the target coverage is 2 morning_1, 3 morning_2, 3 morning_3, 2 day_1, 2 day_2, 3 day_3, 5 evening_1, 2 evening_2, 3 evening_3, and 5 night_1 shifts.
+  - On Day 14, the target coverage is 5 morning_1, 4 morning_2, 3 morning_3, 5 day_1, 4 day_2, 4 day_3, 3 evening_1, 2 evening_2, 2 evening_3, and 4 night_1 shifts.
+  - On Day 15, the target coverage is 6 morning_1, 5 morning_2, 4 morning_3, 5 day_1, 6 day_2, 4 day_3, 3 evening_1, 5 evening_2, 5 evening_3, and 4 night_1 shifts.
+  - On Day 16, the target coverage is 2 morning_1, 3 morning_2, 2 morning_3, 2 day_1, 3 day_2, 3 day_3, 4 evening_1, 3 evening_2, 3 evening_3, and 2 night_1 shifts.
+  - On Day 17, the target coverage is 3 morning_1, 3 morning_2, 3 morning_3, 2 day_1, 4 day_2, 3 day_3, 3 evening_1, 2 evening_2, 2 evening_3, and 3 night_1 shifts.
+  - On Day 18, the target coverage is 5 morning_1, 3 morning_2, 4 morning_3, 5 day_1, 3 day_2, 6 day_3, 6 evening_1, 4 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 19, the target coverage is 4 morning_1, 2 morning_2, 4 morning_3, 4 day_1, 2 day_2, 3 day_3, 3 evening_1, 3 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 20, the target coverage is 2 morning_1, 2 morning_2, 3 morning_3, 3 day_1, 3 day_2, 3 day_3, 2 evening_1, 3 evening_2, 4 evening_3, and 3 night_1 shifts.
+  - On Day 21, the target coverage is 5 morning_1, 6 morning_2, 4 morning_3, 3 day_1, 5 day_2, 4 day_3, 6 evening_1, 6 evening_2, 5 evening_3, and 4 night_1 shifts.
+  - On Day 22, the target coverage is 3 morning_1, 3 morning_2, 4 morning_3, 5 day_1, 4 day_2, 3 day_3, 3 evening_1, 2 evening_2, 3 evening_3, and 3 night_1 shifts.
+  - On Day 23, the target coverage is 3 morning_1, 4 morning_2, 2 morning_3, 3 day_1, 4 day_2, 3 day_3, 5 evening_1, 2 evening_2, 2 evening_3, and 2 night_1 shifts.
+  - On Day 24, the target coverage is 2 morning_1, 3 morning_2, 3 morning_3, 2 day_1, 2 day_2, 3 day_3, 2 evening_1, 2 evening_2, 3 evening_3, and 2 night_1 shifts.
+  - On Day 25, the target coverage is 4 morning_1, 4 morning_2, 2 morning_3, 6 day_1, 4 day_2, 4 day_3, 4 evening_1, 2 evening_2, 4 evening_3, and 4 night_1 shifts.
+  - On Day 26, the target coverage is 5 morning_1, 3 morning_2, 4 morning_3, 2 day_1, 5 day_2, 4 day_3, 5 evening_1, 4 evening_2, 4 evening_3, and 2 night_1 shifts.
+  - On Day 27, the target coverage is 3 morning_1, 3 morning_2, 4 morning_3, 6 day_1, 4 day_2, 3 day_3, 5 evening_1, 4 evening_2, 2 evening_3, and 6 night_1 shifts.
+  - On Day 28, the target coverage is 3 morning_1, 2 morning_2, 3 morning_3, 5 day_1, 3 day_2, 5 day_3, 4 evening_1, 2 evening_2, 3 evening_3, and 2 night_1 shifts.
+  - For every daily coverage target, understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.

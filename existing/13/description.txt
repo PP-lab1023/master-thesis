@@ -1,0 +1,299 @@
+instance_id: instance_13
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 120
+  number_of_days: 28
+  shift_types:
+    - morning_1
+    - morning_2
+    - morning_3
+    - morning_4
+    - morning_5
+    - day_1
+    - day_2
+    - day_3
+    - day_4
+    - day_5
+    - evening_1
+    - evening_2
+    - evening_3
+    - evening_4
+    - evening_5
+    - night_1
+    - night_2
+    - night_3
+    - off
+  shift_duration_minutes:
+    morning_1: 480
+    morning_2: 480
+    morning_3: 480
+    morning_4: 600
+    morning_5: 720
+    day_1: 480
+    day_2: 480
+    day_3: 480
+    day_4: 600
+    day_5: 720
+    evening_1: 480
+    evening_2: 480
+    evening_3: 480
+    evening_4: 600
+    evening_5: 720
+    night_1: 480
+    night_2: 600
+    night_3: 720
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - A morning_5 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A day_1 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4.
+  - A day_2 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4.
+  - A day_3 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4.
+  - A day_4 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5.
+  - A day_5 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A evening_1 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A evening_2 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A evening_3 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A evening_4 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5.
+  - A evening_5 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_4, evening_5.
+  - A night_1 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5.
+  - A night_2 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_3.
+  - A night_3 shift cannot be followed by any of the following shifts on the next day: morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_3.
+  - Nurse 1 must have Day 1 and Day 25 off.
+  - Nurse 5 must have Day 10 and Day 11 off.
+  - Nurse 9 must have Day 15 and Day 25 off.
+  - Nurse 13 must have Day 17 and Day 23 off.
+  - Nurse 17 must have Day 11 and Day 12 off.
+  - Nurse 22 must have Day 3 and Day 4 off.
+  - Nurse 26 must have Day 15 and Day 26 off.
+  - Nurse 30 must have Day 15 and Day 25 off.
+  - Nurse 34 must have Day 8 and Day 11 off.
+  - Nurse 38 must have Day 1 and Day 21 off.
+  - Nurse 42 must have Day 9 and Day 25 off.
+  - Nurse 46 must have Day 23 and Day 28 off.
+  - Nurse 50 must have Day 17 and Day 25 off.
+  - Nurse 54 must have Day 1 and Day 2 off.
+  - Nurse 58 must have Day 7 and Day 8 off.
+  - Nurse 63 must have Day 2 and Day 23 off.
+  - Nurse 67 must have Day 19 and Day 24 off.
+  - Nurse 71 must have Day 16 and Day 17 off.
+  - Nurse 75 must have Day 14 and Day 15 off.
+  - Nurse 79 must have Day 26 and Day 27 off.
+  - Nurse 83 must have Day 20 and Day 25 off.
+  - Nurse 87 must have Day 5 and Day 17 off.
+  - Nurse 91 must have Day 3 and Day 4 off.
+  - Nurse 95 must have Day 4 and Day 5 off.
+  - Nurse 99 must have Day 26 and Day 27 off.
+  - Nurse 104 must have Day 26 and Day 27 off.
+  - Nurse 108 must have Day 6 and Day 7 off.
+  - Nurse 112 must have Day 6 and Day 15 off.
+  - Nurse 116 must have Day 5 and Day 6 off.
+  - Nurse 120 must have Day 8 and Day 9 off.
+
+soft_constraints:
+  - Nurses 1–45 should work between 7920 and 8640 minutes, work no more than 5 consecutive days, work at least 2 consecutive days, have at least 2 consecutive days off, and work at most 2 weekends.
+  - Nurses 46–90 should work between 7440 and 8160 minutes, work no more than 5 consecutive days, work at least 2 consecutive days, have at least 2 consecutive days off, and work at most 2 weekends.
+  - Nurses 91–100 should work between 7920 and 8640 minutes, work no more than 6 consecutive days, work at least 2 consecutive days, have at least 3 consecutive days off, and work at most 2 weekends.
+  - Nurses 101–115 should work between 4440 and 5160 minutes, work no more than 5 consecutive days, work at least 2 consecutive days, have at least 2 consecutive days off, and work at most 3 weekends.
+  - Nurses 116–120 should work between 3120 and 3840 minutes, work no more than 5 consecutive days, work at least 1 consecutive days, have at least 2 consecutive days off, and work at most 1 weekends.
+  - Nurse 1 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, night_1; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), night_1 (3).
+  - Nurse 2 may work only morning_2, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_3; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_5 (7), night_3 (2).
+  - Nurse 3 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_3, evening_2, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 4 may work only morning_3, morning_4, day_2, day_3, day_4, day_5, evening_3, evening_4, evening_5; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7).
+  - Nurse 5 may work only morning_1, morning_3, morning_4, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 6 may work only morning_2, morning_3, morning_5, day_1, day_2, day_5, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 7 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 8 may work only morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_5, evening_1, evening_3, evening_4, evening_5; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_5 (7), evening_4 (11), evening_5 (7).
+  - Nurse 9 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 10 may work only morning_1, morning_2, morning_3, day_1, day_2, day_3, day_5, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 11 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_2, day_3, day_5, evening_1, evening_2, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (7), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 12 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_4, night_1; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), evening_4 (11), night_1 (3).
+  - Nurse 13 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_4, night_1; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), night_1 (3).
+  - Nurse 14 may work only morning_1, morning_2, morning_3, morning_5, day_2, day_3, day_4, evening_1, evening_2, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), evening_4 (11), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 15 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_4, day_5, evening_1, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 16 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_1; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_5 (7), night_1 (3).
+  - Nurse 17 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 18 may work only morning_2, morning_4, morning_5, day_1, day_4, day_5, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 19 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_4, day_5, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 20 may work only morning_1, morning_2, morning_3, morning_4, day_1, day_3, day_5, evening_1, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), day_5 (7), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 21 may work only morning_2, morning_3, morning_4, morning_5, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 22 may work only morning_1, morning_3, day_1, day_2, day_5, evening_1, evening_2, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 23 may work only morning_1, morning_5, day_1, day_2, day_3, day_4, day_5, evening_3, evening_4, evening_5, night_3; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_3 (2).
+  - Nurse 24 may work only morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_4, day_5, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 25 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7).
+  - Nurse 26 may work only morning_1, morning_2, morning_3, morning_4, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2).
+  - Nurse 27 may work only morning_1, morning_2, morning_5, day_2, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 28 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 29 may work only morning_2, morning_3, morning_4, day_1, day_2, day_3, day_5, evening_1, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 30 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_5, evening_1, evening_2, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_5 (7), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 31 may work only morning_1, morning_2, morning_3, day_4, day_5, evening_1, evening_2, evening_3, night_1, night_3; the maximum assignments for capped shifts are day_4 (11), day_5 (7), night_1 (3), night_3 (2).
+  - Nurse 32 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_2, evening_4, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), night_2 (2), night_3 (2).
+  - Nurse 33 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_2, day_3, evening_1, evening_2, evening_3, evening_4, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), evening_4 (11), night_2 (2), night_3 (2).
+  - Nurse 34 may work only morning_1, morning_2, morning_5, day_1, day_5, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (7), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 35 may work only morning_1, morning_2, day_1, day_2, day_4, day_5, evening_2, night_1, night_2, night_3; the maximum assignments for capped shifts are day_4 (11), day_5 (7), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 36 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_3, day_5, evening_2, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_5 (7), evening_4 (11), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 37 may work only morning_1, morning_2, morning_3, day_1, day_3, day_4, evening_1, evening_2, evening_3, evening_5, night_1, night_3; the maximum assignments for capped shifts are day_4 (11), evening_5 (7), night_1 (3), night_3 (2).
+  - Nurse 38 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_3, day_4, day_5, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 39 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 40 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_2, day_3, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 41 may work only morning_2, morning_5, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_2 (2).
+  - Nurse 42 may work only morning_1, morning_2, morning_3, morning_4, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_4, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_4 (11), night_2 (2), night_3 (2).
+  - Nurse 43 may work only morning_1, morning_2, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 44 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_3, evening_4, night_1, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), night_1 (3), night_3 (2).
+  - Nurse 45 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_3, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_3 (2).
+  - Nurse 46 may work only morning_1, morning_2, morning_5, day_2, day_4, evening_1, evening_4, evening_5, night_1; the maximum assignments for capped shifts are morning_5 (6), day_4 (10), evening_4 (10), evening_5 (6), night_1 (3).
+  - Nurse 47 may work only morning_2, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_1, night_2; the maximum assignments for capped shifts are day_4 (10), day_5 (6), evening_5 (6), night_1 (3), night_2 (2).
+  - Nurse 48 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_3, evening_1, evening_3, evening_5, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), evening_5 (6), night_3 (2).
+  - Nurse 49 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, evening_4, evening_5, night_2; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), evening_4 (10), evening_5 (6), night_2 (2).
+  - Nurse 50 may work only morning_2, morning_4, morning_5, day_1, day_3, day_5, evening_1, evening_2, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 51 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_4, evening_1, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 52 may work only morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_2, evening_4, night_1; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), night_1 (3).
+  - Nurse 53 may work only morning_2, morning_4, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_5 (6), night_1 (3), night_3 (2).
+  - Nurse 54 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_5, evening_2, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 55 may work only morning_2, morning_3, morning_4, day_2, day_3, day_4, day_5, evening_2, evening_4, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), evening_4 (10), night_2 (2), night_3 (2).
+  - Nurse 56 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_5, evening_1, evening_2, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 57 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 58 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 59 may work only morning_1, morning_3, morning_4, day_1, day_4, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 60 may work only morning_1, morning_2, morning_3, morning_4, day_1, day_2, day_3, day_4, day_5, evening_2, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), evening_4 (10), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 61 may work only morning_1, morning_2, morning_4, day_4, day_5, evening_3, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), night_3 (2).
+  - Nurse 62 may work only morning_2, morning_3, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_2, night_3; the maximum assignments for capped shifts are day_4 (10), day_5 (6), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 63 may work only morning_3, morning_4, morning_5, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_3, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), night_2 (2), night_3 (2).
+  - Nurse 64 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_3 (2).
+  - Nurse 65 may work only morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_1, evening_2, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 66 may work only morning_2, morning_3, morning_5, day_1, day_2, day_5, evening_1, evening_3, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (6), day_5 (6), evening_5 (6), night_1 (3), night_2 (2).
+  - Nurse 67 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_4, night_1, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), night_1 (3), night_3 (2).
+  - Nurse 68 may work only morning_2, morning_4, morning_5, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_3, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), night_3 (2).
+  - Nurse 69 may work only morning_1, morning_4, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 70 may work only morning_2, morning_4, day_1, day_2, day_3, day_4, day_5, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 71 may work only morning_2, morning_4, day_3, day_4, day_5, evening_1, evening_4, evening_5, night_1; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3).
+  - Nurse 72 may work only morning_4, day_2, day_3, day_4, day_5, evening_1, evening_3, night_1, night_2; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), day_5 (6), night_1 (3), night_2 (2).
+  - Nurse 73 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_1, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 74 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_4, evening_2, evening_3, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), night_3 (2).
+  - Nurse 75 may work only morning_2, morning_3, morning_5, day_1, day_2, day_3, day_4, evening_2, evening_3, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_5 (6), day_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 76 may work only morning_4, morning_5, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 77 may work only morning_1, morning_2, morning_3, morning_4, day_1, day_2, day_3, day_4, evening_2, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_4 (10), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 78 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 79 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 80 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_3, day_4, day_5, evening_1, evening_2, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_2 (2).
+  - Nurse 81 may work only morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_1, evening_2, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 82 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_5, evening_2, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 83 may work only morning_1, morning_2, day_2, day_5, evening_1, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are day_5 (6), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 84 may work only morning_1, morning_2, morning_4, day_2, day_3, day_5, evening_1, evening_2, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), day_5 (6), evening_5 (6), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 85 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_5, evening_1, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_4 (10), evening_5 (6), night_2 (2), night_3 (2).
+  - Nurse 86 may work only morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_5, evening_1, evening_2, evening_3, evening_4, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_5 (6), evening_4 (10), night_3 (2).
+  - Nurse 87 may work only morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, evening_1, evening_2, evening_3, evening_5, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), evening_5 (6), night_3 (2).
+  - Nurse 88 may work only morning_2, morning_4, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), evening_5 (6), night_1 (3), night_3 (2).
+  - Nurse 89 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), day_4 (10), day_5 (6), evening_4 (10), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 90 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, evening_1, evening_2, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (10), morning_5 (6), evening_4 (10), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 91 may work only morning_2, morning_4, day_1, day_2, day_3, day_4, day_5, evening_2, evening_4, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_3 (2).
+  - Nurse 92 may work only morning_1, morning_4, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5; the maximum assignments for capped shifts are morning_4 (11), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7).
+  - Nurse 93 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, evening_1, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), evening_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 94 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_4, night_1; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), night_1 (3).
+  - Nurse 95 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_5, evening_1, evening_2, evening_3, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_5 (7), night_2 (2), night_3 (2).
+  - Nurse 96 may work only morning_2, morning_3, morning_4, morning_5, day_2, day_4, evening_1, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), evening_4 (11), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 97 may work only morning_3, morning_5, day_3, day_4, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (7), day_4 (11), day_5 (7), evening_4 (11), evening_5 (7), night_1 (3), night_2 (2).
+  - Nurse 98 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_4, evening_3, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), morning_5 (7), day_4 (11), evening_5 (7), night_2 (2), night_3 (2).
+  - Nurse 99 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_2, day_5, evening_2, evening_5, night_1, night_3; the maximum assignments for capped shifts are morning_5 (7), day_5 (7), evening_5 (7), night_1 (3), night_3 (2).
+  - Nurse 100 may work only morning_1, morning_2, morning_3, morning_4, day_1, day_2, day_3, evening_1, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (11), evening_4 (11), night_1 (3), night_2 (2), night_3 (2).
+  - Nurse 101 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_2, evening_4, evening_5, night_1; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_4 (6), day_5 (4), evening_4 (6), evening_5 (4), night_1 (2).
+  - Nurse 102 may work only morning_1, morning_3, morning_4, morning_5, day_2, day_3, day_5, evening_1, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_5 (4), evening_4 (6), evening_5 (4), night_1 (2), night_2 (1), night_3 (1).
+  - Nurse 103 may work only morning_1, morning_2, morning_3, morning_5, day_2, day_4, evening_1, evening_2, evening_4, night_1, night_3; the maximum assignments for capped shifts are morning_5 (4), day_4 (6), evening_4 (6), night_1 (2), night_3 (1).
+  - Nurse 104 may work only morning_2, morning_3, morning_4, day_1, day_2, day_4, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (6), day_4 (6), evening_4 (6), evening_5 (4), night_2 (1), night_3 (1).
+  - Nurse 105 may work only morning_2, morning_3, morning_5, day_2, day_3, day_4, day_5, evening_1, evening_3, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (4), day_4 (6), day_5 (4), evening_5 (4), night_1 (2), night_2 (1), night_3 (1).
+  - Nurse 106 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_3, day_5, evening_2, evening_3, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_5 (4), evening_5 (4), night_1 (2), night_2 (1).
+  - Nurse 107 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_3, day_4, evening_1, evening_3, evening_4, night_1, night_3; the maximum assignments for capped shifts are morning_5 (4), day_4 (6), evening_4 (6), night_1 (2), night_3 (1).
+  - Nurse 108 may work only morning_2, morning_3, morning_5, day_1, day_2, day_3, day_5, evening_2, evening_3, evening_4, evening_5, night_1, night_2; the maximum assignments for capped shifts are morning_5 (4), day_5 (4), evening_4 (6), evening_5 (4), night_1 (2), night_2 (1).
+  - Nurse 109 may work only morning_1, day_1, day_2, day_3, evening_1, evening_3, evening_5, night_3; the maximum assignments for capped shifts are evening_5 (4), night_3 (1).
+  - Nurse 110 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_3, day_5, evening_2, evening_3, evening_4, evening_5, night_1; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_5 (4), evening_4 (6), evening_5 (4), night_1 (2).
+  - Nurse 111 may work only morning_1, morning_3, morning_4, morning_5, day_1, day_2, day_4, day_5, evening_1, evening_2, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_4 (6), day_5 (4), evening_5 (4), night_1 (2), night_2 (1), night_3 (1).
+  - Nurse 112 may work only morning_1, morning_3, morning_4, day_2, day_4, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (6), day_4 (6), evening_4 (6), evening_5 (4), night_2 (1), night_3 (1).
+  - Nurse 113 may work only morning_1, morning_2, day_1, day_2, day_3, day_4, day_5, evening_1, evening_3, night_1; the maximum assignments for capped shifts are day_4 (6), day_5 (4), night_1 (2).
+  - Nurse 114 may work only morning_3, morning_4, morning_5, day_1, day_2, day_3, day_5, evening_3, evening_4, evening_5, night_2; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_5 (4), evening_4 (6), evening_5 (4), night_2 (1).
+  - Nurse 115 may work only morning_1, morning_2, morning_4, morning_5, day_1, day_2, day_3, day_4, day_5, evening_1, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (6), morning_5 (4), day_4 (6), day_5 (4), evening_4 (6), evening_5 (4), night_1 (2), night_2 (1), night_3 (1).
+  - Nurse 116 may work only morning_2, morning_4, morning_5, day_1, day_5, evening_2, evening_3, evening_5, night_2; the maximum assignments for capped shifts are morning_4 (5), morning_5 (3), day_5 (3), evening_5 (3), night_2 (1).
+  - Nurse 117 may work only morning_2, morning_3, morning_5, day_1, day_2, day_3, day_5, evening_1, evening_2, evening_3, evening_4, evening_5, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_5 (3), day_5 (3), evening_4 (5), evening_5 (3), night_1 (1), night_2 (1), night_3 (1).
+  - Nurse 118 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_2, day_3, day_4, day_5, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_4 (5), morning_5 (3), day_4 (5), day_5 (3), evening_4 (5), evening_5 (3), night_2 (1), night_3 (1).
+  - Nurse 119 may work only morning_1, morning_2, morning_3, morning_4, morning_5, day_1, day_2, day_3, evening_3, evening_4, night_1, night_2, night_3; the maximum assignments for capped shifts are morning_4 (5), morning_5 (3), evening_4 (5), night_1 (1), night_2 (1), night_3 (1).
+  - Nurse 120 may work only morning_1, morning_2, morning_3, morning_5, day_1, day_2, day_3, evening_1, evening_2, evening_3, evening_4, evening_5, night_2, night_3; the maximum assignments for capped shifts are morning_5 (3), evening_4 (5), evening_5 (3), night_2 (1), night_3 (1).
+  - Nurse 1 prefers evening_2 shifts on Days 4–6 (weight 1).
+  - Nurse 4 prefers evening_4 shifts on Days 15–18 (weight 3).
+  - Nurse 7 prefers morning_2 shifts on Days 8–9 (weight 2).
+  - Nurse 10 prefers evening_2 shifts on Days 12–15 (weight 2).
+  - Nurse 12 prefers day_1 shifts on Days 2–3 (weight 2).
+  - Nurse 16 prefers evening_2 shifts on Days 4–5 (weight 2).
+  - Nurse 20 prefers evening_5 shifts on Days 10–13 (weight 1).
+  - Nurse 23 prefers morning_1 shifts on Day 13 (weight 1).
+  - Nurse 25 prefers evening_1 shifts on Day 16 (weight 3).
+  - Nurse 28 prefers morning_5 shifts on Days 17–21 (weight 1).
+  - Nurse 31 prefers evening_2 shifts on Days 1–4 (weight 1).
+  - Nurse 34 prefers evening_3 shifts on Days 9–10 (weight 2).
+  - Nurse 36 prefers day_3 shifts on Day 10 (weight 1).
+  - Nurse 40 prefers evening_3 shifts on Days 4–7 (weight 1).
+  - Nurse 46 prefers day_4 shifts on Days 13–16 (weight 3).
+  - Nurse 48 prefers evening_1 shifts on Day 2 (weight 2).
+  - Nurse 53 prefers day_4 shifts on Day 11 (weight 1).
+  - Nurse 56 prefers morning_5 shifts on Day 16 (weight 3).
+  - Nurse 59 prefers night_2 shifts on Days 20–24 (weight 3).
+  - Nurse 62 prefers night_2 shifts on Day 28 (weight 2).
+  - Nurse 66 prefers day_5 shifts on Day 21 (weight 2).
+  - Nurse 71 prefers evening_1 shifts on Days 19–22 (weight 2).
+  - Nurse 74 prefers day_3 shifts on Day 12 (weight 3).
+  - Nurse 77 prefers night_2 shifts on Days 27–28 (weight 1).
+  - Nurse 84 prefers night_1 shifts on Days 3–4 (weight 3).
+  - Nurse 86 prefers evening_2 shifts on Days 1–5 (weight 1).
+  - Nurse 88 prefers day_3 shifts on Days 24–26 (weight 2).
+  - Nurse 93 prefers evening_1 shifts on Days 17–20 (weight 2).
+  - Nurse 96 prefers day_2 shifts on Days 18–20 (weight 2).
+  - Nurse 99 prefers morning_3 shifts on Days 14–17 (weight 1).
+  - Nurse 103 prefers night_1 shifts on Days 9–10 (weight 3).
+  - Nurse 108 prefers day_1 shifts on Days 8–11 (weight 2).
+  - Nurse 112 prefers evening_3 shifts on Day 13 (weight 2).
+  - Nurse 115 prefers night_1 shifts on Day 16 (weight 2).
+  - Nurse 120 prefers night_3 shifts on Day 15 (weight 3).
+  - Nurse 1 prefers not to work morning_2 shifts on Days 19–21 (weight 1).
+  - Nurse 4 prefers not to work morning_3 shifts on Days 4–7 (weight 3).
+  - Nurse 13 prefers not to work day_4 shifts on Days 8–9 (weight 2).
+  - Nurse 16 prefers not to work morning_2 shifts on Days 12–13 (weight 3).
+  - Nurse 19 prefers not to work night_3 shifts on Days 14–18 (weight 1).
+  - Nurse 25 prefers not to work evening_5 shifts on Days 20–22 (weight 1).
+  - Nurse 28 prefers not to work morning_5 shifts on Days 6–10 (weight 2).
+  - Nurse 35 prefers not to work night_1 shifts on Day 20 (weight 3).
+  - Nurse 38 prefers not to work night_2 shifts on Days 23–27 (weight 2).
+  - Nurse 43 prefers not to work morning_5 shifts on Days 12–16 (weight 3).
+  - Nurse 45 prefers not to work day_2 shifts on Days 14–16 (weight 2).
+  - Nurse 52 prefers not to work day_5 shifts on Day 25 (weight 2).
+  - Nurse 57 prefers not to work day_4 shifts on Days 13–16 (weight 1).
+  - Nurse 61 prefers not to work day_4 shifts on Days 12–15 (weight 2).
+  - Nurse 65 prefers not to work morning_5 shifts on Days 16–18 (weight 2).
+  - Nurse 68 prefers not to work day_2 shifts on Days 25–26 (weight 3).
+  - Nurse 72 prefers not to work day_5 shifts on Days 7–11 (weight 1).
+  - Nurse 75 prefers not to work day_3 shifts on Days 2–6 (weight 2).
+  - Nurse 77 prefers not to work night_3 shifts on Days 1–2 (weight 1).
+  - Nurse 79 prefers not to work day_2 shifts on Days 15–16 (weight 3).
+  - Nurse 82 prefers not to work night_2 shifts on Day 3 (weight 3).
+  - Nurse 85 prefers not to work morning_2 shifts on Day 4 (weight 1).
+  - Nurse 90 prefers not to work night_1 shifts on Days 24–25 (weight 3).
+  - Nurse 97 prefers not to work evening_5 shifts on Days 10–11 (weight 3).
+  - Nurse 102 prefers not to work night_3 shifts on Days 20–21 (weight 3).
+  - Nurse 103 prefers not to work evening_4 shifts on Day 25 (weight 2).
+  - Nurse 104 prefers not to work night_3 shifts on Days 20–23 (weight 1).
+  - Nurse 109 prefers not to work night_3 shifts on Days 17–21 (weight 3).
+  - Nurse 115 prefers not to work morning_5 shifts on Day 28 (weight 3).
+  - Nurse 120 prefers not to work day_3 shifts on Day 21 (weight 3).
+  - On Day 1, the target coverage is 5 morning_1, 4 morning_2, 3 morning_3, 2 morning_4, 4 morning_5, 4 day_1, 5 day_2, 4 day_3, 4 day_4, 3 day_5, 4 evening_1, 4 evening_2, 5 evening_3, 3 evening_4, 2 evening_5, 3 night_1, 2 night_2, 3 night_3.
+  - On Day 2, the target coverage is 4 morning_1, 3 morning_2, 4 morning_3, 3 morning_4, 3 morning_5, 5 day_1, 5 day_2, 2 day_3, 3 day_4, 3 day_5, 4 evening_1, 4 evening_2, 4 evening_3, 3 evening_4, 3 evening_5, 2 night_1, 3 night_2, 3 night_3.
+  - On Day 3, the target coverage is 4 morning_1, 4 morning_2, 5 morning_3, 3 morning_4, 3 morning_5, 4 day_1, 4 day_2, 5 day_3, 2 day_4, 4 day_5, 2 evening_1, 5 evening_2, 3 evening_3, 4 evening_4, 5 evening_5, 3 night_1, 3 night_2, 4 night_3.
+  - On Day 4, the target coverage is 4 morning_1, 3 morning_2, 4 morning_3, 3 morning_4, 3 morning_5, 2 day_1, 4 day_2, 4 day_3, 4 day_4, 3 day_5, 6 evening_1, 4 evening_2, 6 evening_3, 2 evening_4, 3 evening_5, 5 night_1, 3 night_2, 4 night_3.
+  - On Day 5, the target coverage is 4 morning_1, 4 morning_2, 2 morning_3, 2 morning_4, 3 morning_5, 4 day_1, 4 day_2, 4 day_3, 2 day_4, 3 day_5, 4 evening_1, 4 evening_2, 5 evening_3, 3 evening_4, 3 evening_5, 4 night_1, 5 night_2, 2 night_3.
+  - On Day 6, the target coverage is 5 morning_1, 4 morning_2, 4 morning_3, 5 morning_4, 2 morning_5, 4 day_1, 4 day_2, 5 day_3, 2 day_4, 3 day_5, 5 evening_1, 4 evening_2, 4 evening_3, 2 evening_4, 3 evening_5, 2 night_1, 5 night_2, 3 night_3.
+  - On Day 7, the target coverage is 4 morning_1, 5 morning_2, 4 morning_3, 3 morning_4, 3 morning_5, 3 day_1, 3 day_2, 4 day_3, 2 day_4, 2 day_5, 3 evening_1, 4 evening_2, 4 evening_3, 5 evening_4, 3 evening_5, 4 night_1, 5 night_2, 2 night_3.
+  - On Day 8, the target coverage is 5 morning_1, 4 morning_2, 4 morning_3, 5 morning_4, 2 morning_5, 5 day_1, 4 day_2, 5 day_3, 2 day_4, 2 day_5, 5 evening_1, 5 evening_2, 4 evening_3, 3 evening_4, 4 evening_5, 4 night_1, 3 night_2, 2 night_3.
+  - On Day 9, the target coverage is 4 morning_1, 3 morning_2, 2 morning_3, 3 morning_4, 2 morning_5, 4 day_1, 4 day_2, 4 day_3, 3 day_4, 2 day_5, 4 evening_1, 5 evening_2, 5 evening_3, 2 evening_4, 3 evening_5, 4 night_1, 4 night_2, 3 night_3.
+  - On Day 10, the target coverage is 5 morning_1, 3 morning_2, 6 morning_3, 2 morning_4, 3 morning_5, 4 day_1, 4 day_2, 5 day_3, 2 day_4, 3 day_5, 4 evening_1, 4 evening_2, 4 evening_3, 5 evening_4, 3 evening_5, 4 night_1, 3 night_2, 3 night_3.
+  - On Day 11, the target coverage is 4 morning_1, 3 morning_2, 4 morning_3, 3 morning_4, 4 morning_5, 4 day_1, 6 day_2, 3 day_3, 3 day_4, 3 day_5, 4 evening_1, 6 evening_2, 4 evening_3, 2 evening_4, 5 evening_5, 3 night_1, 2 night_2, 3 night_3.
+  - On Day 12, the target coverage is 4 morning_1, 4 morning_2, 6 morning_3, 4 morning_4, 3 morning_5, 4 day_1, 3 day_2, 5 day_3, 3 day_4, 3 day_5, 5 evening_1, 4 evening_2, 3 evening_3, 3 evening_4, 2 evening_5, 4 night_1, 3 night_2, 2 night_3.
+  - For every daily coverage target, understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.

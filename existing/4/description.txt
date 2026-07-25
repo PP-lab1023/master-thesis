@@ -1,0 +1,91 @@
+instance_id: instance_04
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 10
+  number_of_days: 28
+  shift_types:
+    - early
+    - late
+    - off
+  shift_duration_minutes:
+    early: 480
+    late: 480
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - A late shift cannot be followed by an early shift on the next day.
+  - Nurse 1 must have Days 6 and 7 off.
+  - Nurse 2 must have Days 12 and 17 off.
+  - Nurse 3 must have Days 14 and 15 off.
+  - Nurse 4 must have Days 3 and 13 off.
+  - Nurse 5 must have Days 24 and 25 off.
+  - Nurse 6 must have Days 9 and 18 off.
+  - Nurse 7 must have Days 26 and 27 off.
+  - Nurse 8 must have Days 11 and 12 off.
+  - Nurse 9 must have Days 20 and 21 off.
+  - Nurse 10 must have Days 22 and 25 off.
+
+soft_constraints:
+  - Each nurse should work no more than 8640 minutes, equivalent to 18 shifts, during the scheduling period.
+  - Each nurse should work at least 7560 minutes during the scheduling period.
+  - Each nurse should not work more than 5 consecutive days.
+  - Each working period should contain at least 2 consecutive working days.
+  - Each rest period should contain at least 2 consecutive days off.
+  - Each nurse should work at most 2 weekends.
+  - Nurse 2 should only be assigned to early shifts.
+  - Nurse 6 should only be assigned to late shifts.
+  - Nurse 1 prefers to work a late shift on Days 8-9 (penalty 2 per violation).
+  - Nurse 1 also prefers to work a late shift on Day 24 (penalty 1).
+  - Nurse 2 prefers to work an early shift on Days 8-10 (penalty 2 per violation).
+  - Nurse 2 also prefers to work an early shift on Day 26 (penalty 2).
+  - Nurse 3 prefers to work an early shift on Days 2-3 (penalty 3 per violation).
+  - Nurse 3 also prefers to work an early shift on Days 7-9 (penalty 3 per violation).
+  - Nurse 3 prefers to work a late shift on Days 17-18 (penalty 2 per violation).
+  - Nurse 3 also prefers to work an early shift on Days 26-27 (penalty 2 per violation).
+  - Nurse 4 prefers to work an early shift on Days 8-12 (penalty 2 per violation).
+  - Nurse 4 also prefers to work an early shift on Days 20-24 (penalty 1 per violation).
+  - Nurse 5 prefers to work an early shift on Days 3-6 (penalty 3 per violation).
+  - Nurse 6 prefers to work a late shift on Days 14-16 (penalty 3 per violation).
+  - Nurse 7 prefers to work a late shift on Days 7-11 (penalty 3 per violation).
+  - Nurse 7 also prefers to work a late shift on Days 18-20 (penalty 3 per violation).
+  - Nurse 8 prefers to work an early shift on Day 14 (penalty 3).
+  - Nurse 9 prefers to work an early shift on Days 1-3 (penalty 2 per violation).
+  - Nurse 9 prefers to work a late shift on Days 11-14 (penalty 2 per violation).
+  - Nurse 9 also prefers to work an early shift on Days 22-24 (penalty 2 per violation).
+  - Nurse 2 prefers not to work an early shift on Days 18-19 (penalty 3 per violation).
+  - Nurse 5 prefers not to work a late shift on Days 17-21 (penalty 3 per violation).
+  - Nurse 6 prefers not to work a late shift on Days 4-7 (penalty 1 per violation).
+  - Nurse 6 also prefers not to work a late shift on Days 21-22 (penalty 2 per violation).
+  - Nurse 10 prefers not to work a late shift on Days 8-10 (penalty 3 per violation).
+  - Nurse 10 also prefers not to work a late shift on Days 14-16 (penalty 1 per violation).
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 1. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 3 nurses should work the late shift on Day 2. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 4 nurses should work the late shift on Day 3. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 4. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 5. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 6. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 7. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 3 nurses should work the late shift on Day 8. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 3 nurses should work the late shift on Day 9. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 2 nurses should work the late shift on Day 10. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 11. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 3 nurses should work the late shift on Day 12. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 13. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 5 nurses should work the early shift and 3 nurses should work the late shift on Day 14. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 4 nurses should work the late shift on Day 15. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 5 nurses should work the early shift and 4 nurses should work the late shift on Day 16. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 4 nurses should work the late shift on Day 17. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 2 nurses should work the late shift on Day 18. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 3 nurses should work the late shift on Day 19. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 6 nurses should work the early shift and 4 nurses should work the late shift on Day 20. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 2 nurses should work the early shift and 2 nurses should work the late shift on Day 21. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 4 nurses should work the late shift on Day 22. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 3 nurses should work the early shift and 2 nurses should work the late shift on Day 23. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 5 nurses should work the early shift and 3 nurses should work the late shift on Day 24. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 4 nurses should work the late shift on Day 25. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 6 nurses should work the late shift on Day 26. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 4 nurses should work the late shift on Day 27. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.
+  - Exactly 4 nurses should work the early shift and 1 nurse should work the late shift on Day 28. Understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.

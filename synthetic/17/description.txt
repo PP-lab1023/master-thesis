@@ -1,0 +1,44 @@
+instance_id: millar_data1_01
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 14
+  shift_types:
+    - day
+    - night
+    - off
+
+hard_constraints:
+  - A nurse must be assigned exactly one shift or one day off per day.
+  - The required number of nurses for each shift must be satisfied every day.
+  - A nurse cannot work a night shift followed immediately by a day shift.
+  - A nurse cannot work more than 3 consecutive night shifts.
+  - A nurse cannot work more than 6 consecutive working days.
+  - Every nurse must have at least 4 days off during the scheduling period.
+  - Every nurse must work at least 6 shifts during the scheduling period.
+  - Every nurse can work at most 10 shifts during the scheduling period.
+  - A nurse cannot work more than one shift per day.
+  - All assignments must satisfy the benchmark coverage requirements.
+
+all_preferences:
+  - id: P1
+    text: Nurse 1 prefers to have Day 1 off due to personal plans.
+  - id: P2
+    text: Nurse 2 would like to work a day shift on Day 2.
+  - id: P3
+    text: Nurse 3 prefers not to work a night shift on Day 4.
+  - id: P4
+    text: Nurse 4 would like to take Day 6 off.
+  - id: P5
+    text: Nurse 5 prefers to work a night shift on Day 7.
+  - id: P6
+    text: Nurse 6 would like to avoid working on Day 9.
+  - id: P7
+    text: Nurse 7 prefers to work a day shift on Day 11.
+  - id: P8
+    text: Nurse 8 would like to take Days 13 and 14 off.
+  - id: P9
+    text: Nurse 2 prefers not to work a night shift on Day 12.
+  - id: P10
+    text: Nurse 1 does not want to work on the same shift as Nurse 5 on Day 10.

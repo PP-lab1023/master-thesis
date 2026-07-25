@@ -1,0 +1,48 @@
+instance_id: gpost_b_03_02
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 28
+  shift_types:
+    - day
+    - night
+    - off
+
+hard_constraints:
+  - A nurse must be assigned exactly one shift or one day off per day.
+  - Exactly 3 nurses must be assigned to the day shift on each day.
+  - Exactly 1 nurse must be assigned to the night shift on each day.
+  - Nurses 1, 2, 3, and 4 can work at most 18 shifts during the scheduling period.
+  - Nurses 5, 6, 7, and 8 can work at most 10 shifts during the scheduling period.
+  - A nurse can work at most 4 night shifts during the scheduling period.
+  - Nurses 1, 2, 3, and 4 must work between 4 and 5 shifts per week.
+  - Nurses 5, 6, 7, and 8 must work between 2 and 3 shifts per week.
+  - A nurse cannot work more than 6 consecutive days.
+  - A nurse must have at least 2 consecutive days off when a rest period begins.
+  - A nurse cannot work a night shift followed immediately by a day shift.
+  - A nurse cannot work 4 consecutive night shifts.
+  - A nurse cannot work a single isolated night shift between non-night shifts.
+  - A nurse cannot work more than 2 consecutive weekends.
+
+all_preferences:
+  - id: P1
+    text: Nurse 1 doesn't want to work on the same shift with Nurse 6 because of bad relationship.
+  - id: P2
+    text: Nurse 2 prefers to take Day 6 off for a medical appointment.
+  - id: P3
+    text: Nurse 3 would rather work a day shift than a night shift on Day 9.
+  - id: P4
+    text: Nurse 4 prefers not to work on Day 12.
+  - id: P5
+    text: Nurse 5 would like to take a 2-day rest starting from Day 14.
+  - id: P6
+    text: Nurse 6 prefers not to work a night shift on Day 17.
+  - id: P7
+    text: Nurse 7 would like to work a night shift on Day 20.
+  - id: P8
+    text: Nurse 8 prefers to work a day shift on Day 23.
+  - id: P9
+    text: Nurse 3 prefers to work on the same shift as Nurse 4 on Day 26.
+  - id: P10
+    text: Nurse 5 does not want to work on the same shift as Nurse 7 on Day 28.

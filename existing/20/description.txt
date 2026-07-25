@@ -1,0 +1,300 @@
+instance_id: instance_20
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 50
+  number_of_days: 182
+  shift_types:
+    - morning_1
+    - morning_2
+    - day_1
+    - day_2
+    - evening_1
+    - evening_2
+    - off
+
+hard_constraints:
+  - Exactly one assignment (shift or off) per nurse per day.
+  - day_1 cannot be followed by morning_1, morning_2.
+  - day_2 cannot be followed by morning_1, morning_2.
+  - evening_1 cannot be followed by morning_1, morning_2, day_1, day_2.
+  - evening_2 cannot be followed by morning_1, morning_2, day_1, day_2.
+  - Nurse 1 has fixed days off: Day 20, Day 21, Day 22, Day 23, Day 82, Day 83, Day 84, Day 85, Day 86, Day 87, Day 88, Day 89, Day 90, Day 91, Day 92, Day 93, Day 118, Day 119.
+  - Nurse 2 has fixed days off: Day 17, Day 18, Day 19, Day 20, Day 64, Day 65, Day 66, Day 67, Day 68, Day 69, Day 92, Day 93, Day 94, Day 95, Day 112, Day 113, Day 114, Day 115.
+  - Nurse 3 has fixed days off: Day 8, Day 9, Day 10, Day 11, Day 12, Day 13, Day 14, Day 15, Day 16, Day 17, Day 57, Day 58, Day 59, Day 60, Day 61, Day 62, Day 63, Day 99.
+  - Nurse 4 has fixed days off: Day 12, Day 13, Day 14, Day 15, Day 16, Day 17, Day 48, Day 49, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 56, Day 127, Day 128, Day 129.
+  - Nurse 5 has fixed days off: Day 80, Day 81, Day 82, Day 83, Day 102, Day 122, Day 123, Day 124, Day 125, Day 126, Day 127, Day 128, Day 129, Day 130, Day 131, Day 132, Day 133, Day 140.
+  - Nurse 6 has fixed days off: Day 36, Day 37, Day 38, Day 39, Day 40, Day 63, Day 64, Day 65, Day 66, Day 132, Day 133, Day 134, Day 135, Day 136, Day 167, Day 179, Day 180, Day 181.
+  - Nurse 7 has fixed days off: Day 22, Day 23, Day 24, Day 25, Day 26, Day 27, Day 28, Day 118, Day 119, Day 120, Day 121, Day 122, Day 123, Day 124, Day 125, Day 126, Day 127, Day 128.
+  - Nurse 8 has fixed days off: Day 58, Day 59, Day 60, Day 61, Day 62, Day 63, Day 64, Day 65, Day 66, Day 67, Day 68, Day 69, Day 95, Day 125, Day 126, Day 127, Day 128, Day 162.
+  - Nurse 9 has fixed days off: Day 35, Day 36, Day 37, Day 38, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 56, Day 57, Day 58, Day 59, Day 60, Day 162, Day 163, Day 164.
+  - Nurse 10 has fixed days off: Day 16, Day 17, Day 18, Day 19, Day 20, Day 21, Day 22, Day 23, Day 24, Day 25, Day 57, Day 87, Day 110, Day 111, Day 112, Day 113, Day 114, Day 173.
+  - Nurse 11 has fixed days off: Day 4, Day 5, Day 11, Day 12, Day 13, Day 122, Day 123, Day 124, Day 125, Day 126, Day 127, Day 128, Day 129, Day 130, Day 131, Day 132, Day 133, Day 166.
+  - Nurse 12 has fixed days off: Day 67, Day 68, Day 69, Day 70, Day 71, Day 72, Day 73, Day 74, Day 75, Day 76, Day 77, Day 78, Day 79, Day 80, Day 81, Day 82, Day 93, Day 94.
+  - Nurse 13 has fixed days off: Day 44, Day 45, Day 46, Day 47, Day 48, Day 49, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 68, Day 101, Day 109, Day 163, Day 164, Day 165.
+  - Nurse 14 has fixed days off: Day 20, Day 21, Day 22, Day 69, Day 73, Day 74, Day 75, Day 76, Day 129, Day 130, Day 131, Day 132, Day 133, Day 134, Day 135, Day 136, Day 137, Day 138.
+  - Nurse 15 has fixed days off: Day 9, Day 10, Day 11, Day 12, Day 17, Day 18, Day 39, Day 40, Day 41, Day 55, Day 56, Day 57, Day 133, Day 134, Day 135, Day 147, Day 148, Day 157.
+  - Nurse 16 has fixed days off: Day 56, Day 63, Day 64, Day 65, Day 83, Day 111, Day 112, Day 113, Day 114, Day 115, Day 116, Day 117, Day 118, Day 119, Day 120, Day 121, Day 122, Day 123.
+  - Nurse 17 has fixed days off: Day 51, Day 96, Day 97, Day 98, Day 99, Day 100, Day 101, Day 102, Day 103, Day 104, Day 105, Day 106, Day 107, Day 108, Day 109, Day 132, Day 133, Day 170.
+  - Nurse 18 has fixed days off: Day 2, Day 3, Day 110, Day 111, Day 112, Day 113, Day 128, Day 129, Day 130, Day 131, Day 132, Day 133, Day 134, Day 172, Day 173, Day 174, Day 175, Day 176.
+  - Nurse 19 has fixed days off: Day 8, Day 24, Day 25, Day 26, Day 27, Day 28, Day 29, Day 107, Day 108, Day 109, Day 119, Day 120, Day 121, Day 122, Day 123, Day 124, Day 125, Day 126.
+  - Nurse 20 has fixed days off: Day 58, Day 59, Day 60, Day 61, Day 62, Day 63, Day 64, Day 65, Day 66, Day 140, Day 141, Day 142, Day 143, Day 144, Day 145, Day 146, Day 147, Day 148.
+  - Nurse 21 has fixed days off: Day 34, Day 111, Day 112, Day 113, Day 114, Day 115, Day 145, Day 146, Day 147, Day 148, Day 149, Day 150, Day 151, Day 152, Day 153, Day 154, Day 155, Day 156.
+  - Nurse 22 has fixed days off: Day 55, Day 56, Day 57, Day 58, Day 95, Day 119, Day 120, Day 121, Day 122, Day 123, Day 124, Day 125, Day 126, Day 127, Day 128, Day 148, Day 149, Day 150.
+  - Nurse 23 has fixed days off: Day 59, Day 60, Day 61, Day 62, Day 63, Day 141, Day 142, Day 143, Day 144, Day 145, Day 146, Day 147, Day 148, Day 149, Day 150, Day 151, Day 152, Day 153.
+  - Nurse 24 has fixed days off: Day 12, Day 13, Day 14, Day 15, Day 16, Day 17, Day 18, Day 19, Day 20, Day 21, Day 22, Day 33, Day 34, Day 35, Day 39, Day 65, Day 156, Day 157.
+  - Nurse 25 has fixed days off: Day 49, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 56, Day 57, Day 58, Day 63, Day 64, Day 65, Day 66, Day 138, Day 139, Day 140, Day 141.
+  - Nurse 26 has fixed days off: Day 34, Day 35, Day 36, Day 79, Day 120, Day 133, Day 134, Day 135, Day 136, Day 137, Day 138, Day 139, Day 140, Day 141, Day 142, Day 143, Day 144, Day 145.
+  - Nurse 27 has fixed days off: Day 35, Day 36, Day 37, Day 38, Day 39, Day 66, Day 67, Day 75, Day 76, Day 77, Day 78, Day 79, Day 80, Day 125, Day 126, Day 127, Day 128, Day 129.
+  - Nurse 28 has fixed days off: Day 22, Day 23, Day 24, Day 25, Day 26, Day 27, Day 28, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35, Day 87, Day 88, Day 89, Day 106.
+  - Nurse 29 has fixed days off: Day 19, Day 20, Day 41, Day 42, Day 43, Day 108, Day 109, Day 110, Day 111, Day 112, Day 113, Day 114, Day 115, Day 116, Day 117, Day 118, Day 119, Day 120.
+  - Nurse 30 has fixed days off: Day 44, Day 45, Day 117, Day 118, Day 119, Day 120, Day 121, Day 122, Day 123, Day 124, Day 125, Day 126, Day 127, Day 128, Day 129, Day 130, Day 134, Day 135.
+  - Nurse 31 has fixed days off: Day 15, Day 16, Day 17, Day 18, Day 19, Day 59, Day 60, Day 61, Day 68, Day 69, Day 132, Day 133, Day 134, Day 135, Day 136, Day 137, Day 138, Day 139.
+  - Nurse 32 has fixed days off: Day 24, Day 25, Day 26, Day 27, Day 28, Day 29, Day 49, Day 50, Day 139, Day 147, Day 148, Day 149, Day 150, Day 156, Day 157, Day 158, Day 159, Day 160.
+  - Nurse 33 has fixed days off: Day 23, Day 24, Day 25, Day 26, Day 27, Day 35, Day 36, Day 67, Day 68, Day 69, Day 70, Day 71, Day 72, Day 73, Day 74, Day 75, Day 76, Day 126.
+  - Nurse 34 has fixed days off: Day 50, Day 51, Day 52, Day 53, Day 54, Day 101, Day 102, Day 103, Day 167, Day 168, Day 169, Day 170, Day 171, Day 172, Day 173, Day 174, Day 175, Day 176.
+  - Nurse 35 has fixed days off: Day 34, Day 35, Day 36, Day 37, Day 38, Day 109, Day 110, Day 111, Day 112, Day 113, Day 114, Day 115, Day 123, Day 124, Day 125, Day 142, Day 143, Day 144.
+  - Nurse 36 has fixed days off: Day 1, Day 5, Day 6, Day 47, Day 48, Day 49, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 56, Day 57, Day 100, Day 101, Day 102, Day 103.
+  - Nurse 37 has fixed days off: Day 48, Day 49, Day 50, Day 51, Day 52, Day 53, Day 81, Day 82, Day 83, Day 84, Day 98, Day 99, Day 100, Day 101, Day 102, Day 103, Day 104, Day 105.
+  - Nurse 38 has fixed days off: Day 115, Day 116, Day 117, Day 118, Day 119, Day 120, Day 121, Day 122, Day 123, Day 124, Day 131, Day 132, Day 133, Day 134, Day 135, Day 136, Day 137, Day 138.
+  - Nurse 39 has fixed days off: Day 37, Day 38, Day 39, Day 40, Day 109, Day 110, Day 111, Day 112, Day 113, Day 114, Day 115, Day 135, Day 136, Day 137, Day 138, Day 139, Day 140, Day 141.
+  - Nurse 40 has fixed days off: Day 26, Day 27, Day 28, Day 29, Day 30, Day 37, Day 47, Day 48, Day 49, Day 50, Day 51, Day 52, Day 53, Day 54, Day 55, Day 61, Day 62, Day 121.
+  - Nurse 41 has fixed days off: Day 36, Day 37, Day 38, Day 39, Day 40, Day 41, Day 42, Day 43, Day 44, Day 45, Day 46, Day 47, Day 48, Day 109, Day 110, Day 111, Day 112, Day 158.
+  - Nurse 42 has fixed days off: Day 8, Day 26, Day 27, Day 28, Day 29, Day 30, Day 31, Day 32, Day 33, Day 108, Day 116, Day 117, Day 118, Day 119, Day 120, Day 121, Day 122, Day 123.
+  - Nurse 43 has fixed days off: Day 33, Day 34, Day 35, Day 36, Day 37, Day 108, Day 109, Day 110, Day 111, Day 112, Day 113, Day 114, Day 115, Day 116, Day 138, Day 139, Day 140, Day 170.
+  - Nurse 44 has fixed days off: Day 35, Day 38, Day 39, Day 40, Day 41, Day 42, Day 43, Day 44, Day 45, Day 46, Day 65, Day 66, Day 67, Day 68, Day 69, Day 70, Day 71, Day 101.
+  - Nurse 45 has fixed days off: Day 1, Day 2, Day 3, Day 4, Day 5, Day 6, Day 7, Day 8, Day 9, Day 10, Day 76, Day 77, Day 117, Day 118, Day 119, Day 120, Day 121, Day 122.
+  - Nurse 46 has fixed days off: Day 17, Day 18, Day 25, Day 26, Day 27, Day 28, Day 29, Day 30, Day 31, Day 32, Day 50, Day 51, Day 52, Day 53, Day 54, Day 83, Day 84, Day 116.
+  - Nurse 47 has fixed days off: Day 24, Day 25, Day 72, Day 83, Day 84, Day 85, Day 86, Day 87, Day 88, Day 89, Day 90, Day 91, Day 92, Day 93, Day 103, Day 104, Day 105, Day 106.
+  - Nurse 48 has fixed days off: Day 9, Day 88, Day 89, Day 90, Day 105, Day 106, Day 116, Day 117, Day 118, Day 119, Day 147, Day 148, Day 149, Day 150, Day 151, Day 152, Day 173, Day 174.
+  - Nurse 49 has fixed days off: Day 19, Day 20, Day 21, Day 22, Day 23, Day 24, Day 25, Day 26, Day 27, Day 28, Day 29, Day 92, Day 93, Day 94, Day 95, Day 96, Day 97, Day 162.
+  - Nurse 50 has fixed days off: Day 17, Day 18, Day 19, Day 53, Day 57, Day 88, Day 89, Day 137, Day 141, Day 142, Day 143, Day 144, Day 145, Day 146, Day 147, Day 148, Day 149, Day 152.
+
+soft_constraints:
+  - Minimize weighted penalties from preferences and coverage.
+  - Nurses 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20: minutes 54960-56160, max consecutive 5, min consecutive 2, min off 2, max weekends 13.
+  - Nurses 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35: minutes 54960-56160, max consecutive 6, min consecutive 2, min off 2, max weekends 13.
+  - Nurses 36, 37, 38, 39, 40: minutes 51420-52620, max consecutive 5, min consecutive 3, min off 2, max weekends 13.
+  - Nurses 41, 42, 43, 44, 45: minutes 29640-30840, max consecutive 5, min consecutive 2, min off 2, max weekends 13.
+  - Nurses 46, 47, 48, 49, 50: minutes 26880-28080, max consecutive 3, min consecutive 1, min off 2, max weekends 9.
+  - Nurse 1 may work only: day_1, day_2, evening_1, evening_2.
+  - Nurse 2 may work only: morning_1, morning_2, day_2, evening_1, evening_2.
+  - Nurse 3 may work only: morning_1, day_1, day_2, evening_1.
+  - Nurse 4 may work only: morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 5 may work only: morning_1, morning_2, day_1, day_2, evening_2.
+  - Nurse 6 may work only: morning_2, day_2, evening_1.
+  - Nurse 7 may work only: morning_1, morning_2, day_1, day_2, evening_2.
+  - Nurse 8 may work only: morning_2, day_1, evening_1, evening_2.
+  - Nurse 9 may work only: morning_1, morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 10 may work only: day_1, evening_1, evening_2.
+  - Nurse 11 may work only: morning_1, morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 12 may work only: morning_1, morning_2, day_2, evening_2.
+  - Nurse 13 may work only: morning_1, evening_1, evening_2.
+  - Nurse 14 may work only: morning_1, morning_2, day_1, evening_1, evening_2.
+  - Nurse 15 may work only: morning_1, morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 16 may work only: morning_1, morning_2, day_1, day_2, evening_2.
+  - Nurse 17 may work only: morning_1, morning_2, day_1, day_2, evening_2.
+  - Nurse 18 may work only: morning_1, morning_2, day_1, evening_1.
+  - Nurse 19 may work only: morning_1, day_2, evening_1, evening_2.
+  - Nurse 20 may work only: morning_2, day_1, day_2.
+  - Nurse 21 may work only: morning_1, morning_2, evening_2.
+  - Nurse 22 may work only: day_1, day_2, evening_2.
+  - Nurse 23 may work only: morning_1, morning_2, evening_1, evening_2.
+  - Nurse 24 may work only: morning_1, day_1, day_2, evening_1, evening_2.
+  - Nurse 25 may work only: day_2, evening_2.
+  - Nurse 26 may work only: morning_1, morning_2, day_1, day_2, evening_1.
+  - Nurse 27 may work only: morning_1, morning_2, day_2, evening_1, evening_2.
+  - Nurse 28 may work only: morning_1, day_1, evening_1, evening_2.
+  - Nurse 29 may work only: morning_1, morning_2, day_1, day_2, evening_2.
+  - Nurse 30 may work only: morning_2, day_1, day_2, evening_1.
+  - Nurse 31 may work only: morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 32 may work only: morning_1, morning_2, day_1, day_2, evening_1.
+  - Nurse 33 may work only: morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 34 may work only: morning_1, morning_2, day_1, day_2, evening_1.
+  - Nurse 35 may work only: morning_1, morning_2, day_2, evening_1, evening_2.
+  - Nurse 36 may work only: morning_2, day_2, evening_2.
+  - Nurse 37 may work only: morning_1, morning_2, evening_1, evening_2.
+  - Nurse 38 may work only: morning_1, morning_2, day_1, evening_2.
+  - Nurse 39 may work only: morning_2, day_1, day_2, evening_2.
+  - Nurse 40 may work only: morning_1, day_1, evening_1, evening_2.
+  - Nurse 41 may work only: morning_1, day_1, day_2, evening_1, evening_2.
+  - Nurse 42 may work only: morning_2, day_1, evening_1, evening_2.
+  - Nurse 43 may work only: morning_2, day_2, evening_1.
+  - Nurse 44 may work only: morning_1, morning_2, day_2.
+  - Nurse 45 may work only: morning_1, morning_2, day_1, day_2.
+  - Nurse 46 may work only: morning_1, morning_2, day_1, day_2, evening_1.
+  - Nurse 47 may work only: morning_1, morning_2, day_1, evening_1, evening_2.
+  - Nurse 48 may work only: morning_1, morning_2, day_1, day_2, evening_1.
+  - Nurse 49 may work only: morning_2, day_1, day_2, evening_1, evening_2.
+  - Nurse 50 may work only: morning_1, day_2, evening_2.
+  - Nurse 1 prefers to work day_2 on Day 8 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 9 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 10 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 11 (weight 2).
+  - Nurse 1 prefers to work evening_2 on Day 29 (weight 1).
+  - Nurse 1 prefers to work evening_2 on Day 30 (weight 1).
+  - Nurse 1 prefers to work evening_2 on Day 31 (weight 1).
+  - Nurse 1 prefers to work evening_2 on Day 32 (weight 1).
+  - Nurse 1 prefers to work evening_2 on Day 53 (weight 3).
+  - Nurse 1 prefers to work evening_2 on Day 60 (weight 3).
+  - Nurse 1 prefers to work evening_2 on Day 61 (weight 3).
+  - Nurse 1 prefers to work evening_2 on Day 62 (weight 3).
+  - Nurse 1 prefers to work evening_2 on Day 63 (weight 3).
+  - Nurse 1 prefers to work evening_2 on Day 64 (weight 3).
+  - Nurse 1 prefers to work day_1 on Day 68 (weight 3).
+  - Nurse 1 prefers to work day_1 on Day 69 (weight 3).
+  - Nurse 1 prefers to work evening_1 on Day 112 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 113 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 114 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 126 (weight 3).
+  - Nurse 1 prefers to work day_2 on Day 130 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 131 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 132 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 146 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 147 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 148 (weight 2).
+  - Nurse 1 prefers to work evening_1 on Day 149 (weight 2).
+  - Nurse 1 prefers to work day_2 on Day 157 (weight 1).
+  - Nurse 1 prefers to work day_2 on Day 158 (weight 1).
+  - Nurse 1 prefers to work day_2 on Day 159 (weight 1).
+  - Nurse 1 prefers to work day_2 on Day 160 (weight 1).
+  - Nurse 1 prefers to work day_2 on Day 161 (weight 1).
+  - Nurse 1 prefers to work evening_1 on Day 178 (weight 3).
+  - Nurse 1 prefers to work evening_1 on Day 179 (weight 3).
+  - Nurse 1 prefers to work evening_1 on Day 180 (weight 3).
+  - Nurse 1 prefers to work evening_1 on Day 181 (weight 3).
+  - Nurse 2 prefers to work morning_2 on Day 8 (weight 2).
+  - Nurse 2 prefers to work morning_2 on Day 9 (weight 2).
+  - Nurse 2 prefers to work morning_2 on Day 10 (weight 2).
+  - Nurse 2 prefers to work morning_2 on Day 11 (weight 2).
+  - Nurse 1 prefers not to work day_1 on Day 25 (weight 1).
+  - Nurse 1 prefers not to work day_2 on Day 44 (weight 1).
+  - Nurse 1 prefers not to work day_2 on Day 45 (weight 1).
+  - Nurse 1 prefers not to work day_2 on Day 46 (weight 1).
+  - Nurse 1 prefers not to work day_2 on Day 47 (weight 1).
+  - Nurse 1 prefers not to work day_2 on Day 48 (weight 1).
+  - Nurse 1 prefers not to work day_1 on Day 169 (weight 2).
+  - Nurse 1 prefers not to work day_1 on Day 170 (weight 2).
+  - Nurse 1 prefers not to work day_1 on Day 171 (weight 2).
+  - Nurse 1 prefers not to work day_1 on Day 172 (weight 2).
+  - Nurse 1 prefers not to work day_1 on Day 173 (weight 2).
+  - Nurse 2 prefers not to work morning_2 on Day 35 (weight 3).
+  - Nurse 2 prefers not to work morning_2 on Day 36 (weight 3).
+  - Nurse 2 prefers not to work morning_2 on Day 37 (weight 3).
+  - Nurse 2 prefers not to work day_2 on Day 103 (weight 3).
+  - Nurse 2 prefers not to work day_2 on Day 104 (weight 3).
+  - Nurse 2 prefers not to work day_2 on Day 105 (weight 3).
+  - Nurse 2 prefers not to work morning_1 on Day 139 (weight 2).
+  - Nurse 2 prefers not to work morning_1 on Day 140 (weight 2).
+  - Nurse 2 prefers not to work morning_1 on Day 141 (weight 2).
+  - Nurse 2 prefers not to work morning_1 on Day 142 (weight 2).
+  - Nurse 2 prefers not to work morning_1 on Day 143 (weight 2).
+  - Nurse 3 prefers not to work day_2 on Day 125 (weight 3).
+  - Nurse 3 prefers not to work day_2 on Day 126 (weight 3).
+  - Nurse 3 prefers not to work day_2 on Day 127 (weight 3).
+  - Day 1: morning_1 requires 1 nurses.
+  - Day 1: morning_2 requires 3 nurses.
+  - Day 1: day_1 requires 7 nurses.
+  - Day 1: day_2 requires 5 nurses.
+  - Day 1: evening_1 requires 2 nurses.
+  - Day 1: evening_2 requires 4 nurses.
+  - Day 2: morning_1 requires 3 nurses.
+  - Day 2: morning_2 requires 1 nurses.
+  - Day 2: day_1 requires 5 nurses.
+  - Day 2: day_2 requires 7 nurses.
+  - Day 2: evening_1 requires 2 nurses.
+  - Day 2: evening_2 requires 2 nurses.
+  - Day 3: morning_1 requires 2 nurses.
+  - Day 3: morning_2 requires 1 nurses.
+  - Day 3: day_1 requires 8 nurses.
+  - Day 3: day_2 requires 9 nurses.
+  - Day 3: evening_1 requires 2 nurses.
+  - Day 3: evening_2 requires 2 nurses.
+  - Day 4: morning_1 requires 2 nurses.
+  - Day 4: morning_2 requires 2 nurses.
+  - Day 4: day_1 requires 7 nurses.
+  - Day 4: day_2 requires 8 nurses.
+  - Day 4: evening_1 requires 3 nurses.
+  - Day 4: evening_2 requires 2 nurses.
+  - Day 5: morning_1 requires 2 nurses.
+  - Day 5: morning_2 requires 1 nurses.
+  - Day 5: day_1 requires 9 nurses.
+  - Day 5: day_2 requires 7 nurses.
+  - Day 5: evening_1 requires 2 nurses.
+  - Day 5: evening_2 requires 2 nurses.
+  - Day 6: morning_1 requires 2 nurses.
+  - Day 6: morning_2 requires 1 nurses.
+  - Day 6: day_1 requires 8 nurses.
+  - Day 6: day_2 requires 7 nurses.
+  - Day 6: evening_1 requires 2 nurses.
+  - Day 6: evening_2 requires 1 nurses.
+  - Day 7: morning_1 requires 2 nurses.
+  - Day 7: morning_2 requires 2 nurses.
+  - Day 7: day_1 requires 8 nurses.
+  - Day 7: day_2 requires 7 nurses.
+  - Day 7: evening_1 requires 3 nurses.
+  - Day 7: evening_2 requires 1 nurses.
+  - Day 8: morning_1 requires 3 nurses.
+  - Day 8: morning_2 requires 3 nurses.
+  - Day 8: day_1 requires 8 nurses.
+  - Day 8: day_2 requires 5 nurses.
+  - Day 8: evening_1 requires 3 nurses.
+  - Day 8: evening_2 requires 2 nurses.
+  - Day 9: morning_1 requires 1 nurses.
+  - Day 9: morning_2 requires 2 nurses.
+  - Day 9: day_1 requires 6 nurses.
+  - Day 9: day_2 requires 7 nurses.
+  - Day 9: evening_1 requires 2 nurses.
+  - Day 9: evening_2 requires 2 nurses.
+  - Day 10: morning_1 requires 1 nurses.
+  - Day 10: morning_2 requires 2 nurses.
+  - Day 10: day_1 requires 7 nurses.
+  - Day 10: day_2 requires 7 nurses.
+  - Day 10: evening_1 requires 2 nurses.
+  - Day 10: evening_2 requires 2 nurses.
+  - Day 11: morning_1 requires 2 nurses.
+  - Day 11: morning_2 requires 1 nurses.
+  - Day 11: day_1 requires 9 nurses.
+  - Day 11: day_2 requires 7 nurses.
+  - Day 11: evening_1 requires 2 nurses.
+  - Day 11: evening_2 requires 3 nurses.
+  - Day 12: morning_1 requires 4 nurses.
+  - Day 12: morning_2 requires 3 nurses.
+  - Day 12: day_1 requires 7 nurses.
+  - Day 12: day_2 requires 6 nurses.
+  - Day 12: evening_1 requires 2 nurses.
+  - Day 12: evening_2 requires 3 nurses.
+  - Day 13: morning_1 requires 2 nurses.
+  - Day 13: morning_2 requires 3 nurses.
+  - Day 13: day_1 requires 6 nurses.
+  - Day 13: day_2 requires 7 nurses.
+  - Day 13: evening_1 requires 3 nurses.
+  - Day 13: evening_2 requires 1 nurses.
+  - Day 14: morning_1 requires 2 nurses.
+  - Day 14: morning_2 requires 2 nurses.
+  - Day 14: day_1 requires 7 nurses.
+  - Day 14: day_2 requires 7 nurses.
+  - Day 14: evening_1 requires 2 nurses.
+  - Day 14: evening_2 requires 3 nurses.
+  - Day 15: morning_1 requires 2 nurses.
+  - Day 15: morning_2 requires 1 nurses.
+  - Day 15: day_1 requires 8 nurses.
+  - Day 15: day_2 requires 8 nurses.
+  - Day 15: evening_1 requires 2 nurses.
+  - Day 15: evening_2 requires 1 nurses.
+  - Day 16: morning_1 requires 2 nurses.
+  - Day 16: morning_2 requires 2 nurses.
+  - Day 16: day_1 requires 7 nurses.
+  - Day 16: day_2 requires 9 nurses.
+  - Day 16: evening_1 requires 4 nurses.
+  - Day 16: evening_2 requires 2 nurses.
+  - Day 17: morning_1 requires 2 nurses.
+  - Day 17: morning_2 requires 1 nurses.
+  - Day 17: day_1 requires 7 nurses.
+  - Day 17: day_2 requires 7 nurses.
+  - Day 17: evening_1 requires 1 nurses.
+  - Day 17: evening_2 requires 2 nurses.
+  - Day 18: morning_1 requires 3 nurses.
+  - Day 18: morning_2 requires 2 nurses.
+  - Day 18: day_1 requires 7 nurses.
+  - Day 18: day_2 requires 5 nurses.

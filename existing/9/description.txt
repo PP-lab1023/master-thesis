@@ -1,0 +1,185 @@
+instance_id: instance_09
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 36
+  number_of_days: 28
+  shift_types:
+    - early
+    - day
+    - late
+    - night
+    - off
+  shift_duration_minutes:
+    early: 480
+    day: 480
+    late: 480
+    night: 600
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - A day shift cannot be followed by an early shift on the next day.
+  - A late shift cannot be followed by an early or day shift on the next day.
+  - A night shift cannot be followed by an early, day, or late shift on the next day.
+  - Nurse 1 must have Days 16 and 19 off.
+  - Nurse 2 must have Days 10 and 11 off.
+  - Nurse 3 must have Days 25 and 26 off.
+  - Nurse 4 must have Days 14 and 15 off.
+  - Nurse 5 must have Days 18 and 24 off.
+  - Nurse 6 must have Days 15 and 16 off.
+  - Nurse 7 must have Days 3 and 4 off.
+  - Nurse 8 must have Days 19 and 20 off.
+  - Nurse 9 must have Days 9 and 19 off.
+  - Nurse 10 must have Days 4 and 23 off.
+  - Nurse 11 must have Days 2 and 26 off.
+  - Nurse 12 must have Days 7 and 8 off.
+  - Nurse 13 must have Days 22 and 23 off.
+  - Nurse 14 must have Days 23 and 26 off.
+  - Nurse 15 must have Days 12 and 13 off.
+  - Nurse 16 must have Days 8 and 13 off.
+  - Nurse 17 must have Days 25 and 26 off.
+  - Nurse 18 must have Days 15 and 16 off.
+  - Nurse 19 must have Days 4 and 5 off.
+  - Nurse 20 must have Days 26 and 27 off.
+  - Nurse 21 must have Days 4 and 15 off.
+  - Nurse 22 must have Days 23 and 24 off.
+  - Nurse 23 must have Days 1 and 15 off.
+  - Nurse 24 must have Days 17 and 22 off.
+  - Nurse 25 must have Days 12 and 13 off.
+  - Nurse 26 must have Days 8 and 9 off.
+  - Nurse 27 must have Days 6 and 7 off.
+  - Nurse 28 must have Days 25 and 26 off.
+  - Nurse 29 must have Days 14 and 15 off.
+  - Nurse 30 must have Days 2 and 3 off.
+  - Nurse 31 must have Days 2 and 3 off.
+  - Nurse 32 must have Days 6 and 7 off.
+  - Nurse 33 must have Days 14 and 15 off.
+  - Nurse 34 must have Days 1 and 11 off.
+
+soft_constraints:
+  - Nurses 1 to 10 should work no more than 8160 minutes and at least 7080 minutes during the scheduling period.
+  - Nurses 1 to 10 should not work more than 5 consecutive days.
+  - Each working period of Nurses 1 to 10 should contain at least 2 consecutive working days.
+  - Each rest period of Nurses 1 to 10 should contain at least 2 consecutive days off.
+  - Nurses 1 to 10 should work at most 2 weekends.
+  - Nurses 11 to 16 should work no more than 6480 minutes and at least 5400 minutes during the scheduling period.
+  - Nurses 11 to 16 should not work more than 4 consecutive days.
+  - Each working period of Nurses 11 to 16 should contain at least 2 consecutive working days.
+  - Each rest period of Nurses 11 to 16 should contain at least 3 consecutive days off.
+  - Nurses 11 to 16 should work at most 2 weekends.
+  - Nurses 17 to 26 should work no more than 5160 minutes and at least 4080 minutes during the scheduling period.
+  - Nurses 17 to 26 should not work more than 5 consecutive days.
+  - Each working period of Nurses 17 to 26 should contain at least 1 working day.
+  - Each rest period of Nurses 17 to 26 should contain at least 2 consecutive days off.
+  - Nurses 17 to 26 should work at most 3 weekends.
+  - Nurses 27 to 36 should work no more than 3420 minutes and at least 2340 minutes during the scheduling period.
+  - Nurses 27 to 36 should not work more than 5 consecutive days.
+  - Each working period of Nurses 27 to 36 should contain at least 1 working day.
+  - Each rest period of Nurses 27 to 36 should contain at least 1 day off.
+  - Nurses 27 to 36 should work at most 3 weekends.
+  - Nurse 4 can only work day, late, and night shifts and should work no more than 5 night shifts.
+  - Nurses 5 and 7 can only work early and day shifts.
+  - Nurse 6 can work early, day, and night shifts and should work no more than 5 night shifts.
+  - Nurse 11 can only work early, late, and night shifts and should work no more than 4 night shifts.
+  - Nurse 12 can only work early, late, and night shifts and should work no more than 4 night shifts.
+  - Nurse 13 can only work day, late, and night shifts and should work no more than 4 night shifts.
+  - Nurse 16 can work early, day, and night shifts and should work no more than 4 night shifts.
+  - Nurse 17 can only work day and late shifts.
+  - Nurses 19, 22, and 26 can work early, day, and night shifts and should work no more than 3 night shifts.
+  - Nurse 20 can only work day, late, and night shifts and should work no more than 3 night shifts.
+  - Nurse 23 can only work late shifts.
+  - Nurses 27 and 28 can work late and night shifts and should work no more than 2 night shifts.
+  - Nurse 29 can work day and night shifts and should work no more than 2 night shifts.
+  - Nurse 30 can work early, day, and night shifts and should work no more than 2 night shifts.
+  - Nurse 31 can work all shift types and should work no more than 2 night shifts.
+  - Nurse 32 can work all shift types and should work no more than 2 night shifts.
+  - Nurse 33 can work early, day, and late shifts but cannot work night shifts.
+  - Nurse 34 can work early, late, and night shifts and should work no more than 2 night shifts.
+  - Nurse 35 can only work day and late shifts.
+  - Nurse 36 can work early, late, and night shifts and should work no more than 2 night shifts.
+  - Nurse 1 prefers late shifts on Days 9-11.
+  - Nurse 2 prefers day shifts on Days 1-2.
+  - Nurse 3 prefers a day shift on Day 23.
+  - Nurse 4 prefers late shifts on Days 2, 18, and 19.
+  - Nurse 5 prefers day shifts on Days 2-3 and early shifts on Days 22-23.
+  - Nurse 6 prefers early shifts on Days 9-11 and Days 17-20.
+  - Nurse 8 prefers late shifts on Days 21-22.
+  - Nurse 9 prefers a late shift on Day 17.
+  - Nurse 10 prefers a night shift on Day 3, late shifts on Days 10-13 and Days 17-20, and early shifts on Days 27-28.
+  - Nurse 12 prefers late shifts on Days 18-20.
+  - Nurse 13 prefers late shifts on Days 1-2, Days 6-7, and Day 11, day shifts on Days 17-21, and night shifts on Days 27-28.
+  - Nurse 15 prefers night shifts on Days 23-25.
+  - Nurse 18 prefers night shifts on Days 4-8 and late shifts on Days 22-26.
+  - Nurse 20 prefers night shifts on Days 7-10 and Days 23-25.
+  - Nurse 21 prefers early shifts on Days 18-21.
+  - Nurse 22 prefers day shifts on Days 4 and 8.
+  - Nurse 23 prefers late shifts on Days 2-4 and Days 20-21.
+  - Nurse 24 prefers late shifts on Days 6-10.
+  - Nurse 25 prefers a late shift on Day 16 and day shifts on Days 23-25.
+  - Nurse 26 prefers day shifts on Days 2-5, early shifts on Days 11-12, and day shifts on Days 26-28.
+  - Nurse 27 prefers night shifts on Days 8-11.
+  - Nurse 28 prefers night shifts on Days 23-27.
+  - Nurse 29 prefers day shifts on Days 1-2, a night shift on Day 7, and night shifts on Days 25-27.
+  - Nurse 30 prefers early shifts on Days 7-9.
+  - Nurse 32 prefers an early shift on Day 13 and a late shift on Day 23.
+  - Nurse 33 prefers early shifts on Days 21-23.
+  - Nurse 34 prefers early shifts on Days 1-3.
+  - Nurse 35 prefers day shifts on Days 4, 11-13, and 22-23.
+  - Nurse 36 prefers late shifts on Days 7-8, Days 15-19, and Days 23-26.
+  - Nurse 1 prefers not to work day shifts on Days 21-23.
+  - Nurse 2 prefers not to work early shifts on Days 17-20.
+  - Nurse 3 prefers not to work early shifts on Days 8-11.
+  - Nurse 4 prefers not to work day shifts on Days 7-9.
+  - Nurse 5 prefers not to work a day shift on Day 11, an early shift on Day 15, or a day shift on Day 27.
+  - Nurse 7 prefers not to work an early shift on Day 20.
+  - Nurse 8 prefers not to work day shifts on Days 2-3.
+  - Nurse 9 prefers not to work a night shift on Day 12 or night shifts on Days 21-24.
+  - Nurse 10 prefers not to work day shifts on Days 27-28.
+  - Nurse 11 prefers not to work early shifts on Days 7-9.
+  - Nurse 12 prefers not to work day shifts on Days 12-13.
+  - Nurse 13 prefers not to work night shifts on Days 4-7.
+  - Nurse 15 prefers not to work late shifts on Days 9-12.
+  - Nurse 16 prefers not to work an early shift on Day 10.
+  - Nurse 17 prefers not to work night shifts on Days 19-22.
+  - Nurse 18 prefers not to work day shifts on Days 10-13.
+  - Nurse 19 prefers not to work late shifts on Days 24-26.
+  - Nurse 20 prefers not to work early shifts on Days 1-4 or late shifts on Days 23-27.
+  - Nurse 22 prefers not to work late shifts on Days 13-14.
+  - Nurse 23 prefers not to work early shifts on Days 21-23.
+  - Nurse 24 prefers not to work day shifts on Days 7-10 or Days 22-23.
+  - Nurse 25 prefers not to work late shifts on Days 7-11 or day shifts on Days 18-20.
+  - Nurse 26 prefers not to work a night shift on Days 15-16 or a day shift on Day 23.
+  - Nurse 27 prefers not to work late shifts on Days 4-5.
+  - Nurse 28 prefers not to work day shifts on Days 1-3 or early shifts on Days 11-15.
+  - Nurse 29 prefers not to work night shifts on Days 18-19.
+  - On Day 1, the target coverage is 2 early, 5 day, 6 late, and 2 night shifts.
+  - On Day 2, the target coverage is 3 early, 6 day, 4 late, and 2 night shifts.
+  - On Day 3, the target coverage is 4 early, 4 day, 5 late, and 1 night shift.
+  - On Day 4, the target coverage is 5 early, 5 day, 5 late, and 1 night shift.
+  - On Day 5, the target coverage is 3 early, 3 day, 4 late, and 2 night shifts.
+  - On Day 6, the target coverage is 4 early, 2 day, 5 late, and 2 night shifts.
+  - On Day 7, the target coverage is 3 early, 4 day, 4 late, and 1 night shift.
+  - On Day 8, the target coverage is 3 early, 4 day, 4 late, and 3 night shifts.
+  - On Day 9, the target coverage is 3 early, 4 day, 3 late, and 3 night shifts.
+  - On Day 10, the target coverage is 4 early, 4 day, 4 late, and 3 night shifts.
+  - On Day 11, the target coverage is 4 early, 2 day, 2 late, and 4 night shifts.
+  - On Day 12, the target coverage is 4 early, 6 day, 5 late, and 2 night shifts.
+  - On Day 13, the target coverage is 5 early, 2 day, 4 late, and 4 night shifts.
+  - On Day 14, the target coverage is 4 early, 3 day, 4 late, and 3 night shifts.
+  - On Day 15, the target coverage is 4 early, 2 day, 3 late, and 3 night shifts.
+  - On Day 16, the target coverage is 4 early, 3 day, 4 late, and 3 night shifts.
+  - On Day 17, the target coverage is 2 early, 3 day, 4 late, and 3 night shifts.
+  - On Day 18, the target coverage is 3 early, 3 day, 5 late, and 2 night shifts.
+  - On Day 19, the target coverage is 3 early, 4 day, 5 late, and 3 night shifts.
+  - On Day 20, the target coverage is 2 early, 4 day, 4 late, and 2 night shifts.
+  - On Day 21, the target coverage is 5 early, 4 day, 3 late, and 3 night shifts.
+  - On Day 22, the target coverage is 6 early, 5 day, 6 late, and 3 night shifts.
+  - On Day 23, the target coverage is 4 early, 3 day, 4 late, and 2 night shifts.
+  - On Day 24, the target coverage is 4 early, 5 day, 5 late, and 2 night shifts.
+  - On Day 25, the target coverage is 5 early, 5 day, 5 late, and 2 night shifts.
+  - On Day 26, the target coverage is 5 early, 4 day, 5 late, and 3 night shifts.
+  - On Day 27, the target coverage is 3 early, 6 day, 3 late, and 5 night shifts.
+  - On Day 28, the target coverage is 4 early, 7 day, 6 late, and 3 night shifts.
+  - For every daily coverage target, understaffing incurs a penalty of 100 per missing nurse, while overstaffing incurs a penalty of 1 per extra nurse.

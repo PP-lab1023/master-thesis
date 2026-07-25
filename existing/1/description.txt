@@ -1,0 +1,73 @@
+instance_id: instance_01
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 14
+  shift_types:
+    - day
+    - off
+  shift_duration_minutes:
+    day: 480
+  first_day_of_scheduling_period: Monday
+
+hard_constraints:
+  - Each nurse must be assigned either one day shift or one day off on each day.
+  - A nurse cannot be assigned more than one shift on the same day.
+  - Nurse 1 must have Day 1 off.
+  - Nurse 2 must have Day 6 off.
+  - Nurse 3 must have Day 9 off.
+  - Nurse 4 must have Day 3 off.
+  - Nurse 5 must have Day 10 off.
+  - Nurse 6 must have Day 6 off.
+  - Nurse 7 must have Day 2 off.
+  - Nurse 8 must have Day 8 off.
+
+soft_constraints:
+  - Each nurse should work no more than 14 day shifts during the scheduling period.
+  - Each nurse should work no more than 4320 minutes, equivalent to 9 day shifts, during the scheduling period.
+  - Each nurse should work at least 3360 minutes, equivalent to 7 day shifts, during the scheduling period.
+  - Each nurse should work no more than 5 consecutive days.
+  - Each sequence of consecutive working days should contain at least 2 days.
+  - Each sequence of consecutive days off should contain at least 2 days.
+  - Each nurse should work no more than 1 weekend during the scheduling period.
+  - Nurse 1 prefers to work a day shift on Day 3, with a violation penalty of 2.
+  - Nurse 1 prefers to work a day shift on Day 4, with a violation penalty of 2.
+  - Nurse 2 prefers to work a day shift on Day 1, with a violation penalty of 3.
+  - Nurse 2 prefers to work a day shift on Day 2, with a violation penalty of 3.
+  - Nurse 2 prefers to work a day shift on Day 3, with a violation penalty of 3.
+  - Nurse 2 prefers to work a day shift on Day 4, with a violation penalty of 3.
+  - Nurse 2 prefers to work a day shift on Day 5, with a violation penalty of 3.
+  - Nurse 3 prefers to work a day shift on Day 1, with a violation penalty of 1.
+  - Nurse 3 prefers to work a day shift on Day 2, with a violation penalty of 1.
+  - Nurse 3 prefers to work a day shift on Day 3, with a violation penalty of 1.
+  - Nurse 3 prefers to work a day shift on Day 4, with a violation penalty of 1.
+  - Nurse 3 prefers to work a day shift on Day 5, with a violation penalty of 1.
+  - Nurse 3 prefers not to work a day shift on Day 13, with a violation penalty of 1.
+  - Nurse 3 prefers not to work a day shift on Day 14, with a violation penalty of 1.
+  - Nurse 4 prefers to work a day shift on Day 9, with a violation penalty of 2.
+  - Nurse 4 prefers to work a day shift on Day 10, with a violation penalty of 2.
+  - Nurse 6 prefers to work a day shift on Day 1, with a violation penalty of 2.
+  - Nurse 6 prefers to work a day shift on Day 2, with a violation penalty of 2.
+  - Nurse 6 prefers not to work a day shift on Day 9, with a violation penalty of 3.
+  - Nurse 8 prefers not to work a day shift on Day 3, with a violation penalty of 3.
+  - Nurse 8 prefers not to work a day shift on Day 4, with a violation penalty of 3.
+  - Nurse 8 prefers to work a day shift on Day 10, with a violation penalty of 1.
+  - Nurse 8 prefers to work a day shift on Day 11, with a violation penalty of 1.
+  - Nurse 8 prefers to work a day shift on Day 12, with a violation penalty of 1.
+  - Nurse 8 prefers to work a day shift on Day 13, with a violation penalty of 1.
+  - Nurse 8 prefers to work a day shift on Day 14, with a violation penalty of 1.
+  - Exactly 5 nurses should be assigned to the day shift on Day 1. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 7 nurses should be assigned to the day shift on Day 2. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 6 nurses should be assigned to the day shift on Day 3. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 4 nurses should be assigned to the day shift on Day 4. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 5 nurses should be assigned to the day shift on Day 5. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 5 nurses should be assigned to the day shift on Day 6. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 5 nurses should be assigned to the day shift on Day 7. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 6 nurses should be assigned to the day shift on Day 8. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 7 nurses should be assigned to the day shift on Day 9. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 4 nurses should be assigned to the day shift on Day 10. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 2 nurses should be assigned to the day shift on Day 11. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 5 nurses should be assigned to the day shift on Day 12. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 6 nurses should be assigned to the day shift on Day 13. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.
+  - Exactly 4 nurses should be assigned to the day shift on Day 14. Each understaffed nurse incurs a penalty of 100, and each overstaffed nurse incurs a penalty of 1.

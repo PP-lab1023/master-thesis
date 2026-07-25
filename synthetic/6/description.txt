@@ -1,0 +1,46 @@
+instance_id: gpost_07_02
+problem_type: nurse_scheduling
+
+basic_setting:
+  number_of_nurses: 8
+  number_of_days: 28
+  shift_types:
+    - day
+    - night
+    - off
+
+hard_constraints:
+  - Each nurse must be assigned exactly one shift or one day off per day.
+  - Exactly 3 nurses must be assigned to the day shift on each day.
+  - Exactly 1 nurse must be assigned to the night shift on each day.
+  - Nurses 1, 2, 3, and 4 can work at most 18 shifts during the scheduling period.
+  - Nurses 5, 6, 7, and 8 can work at most 10 shifts during the scheduling period.
+  - Each nurse can work at most 4 night shifts during the scheduling period.
+  - A nurse cannot work more than 6 consecutive working days.
+  - A nurse cannot work more than 3 consecutive night shifts.
+  - A nurse cannot work a night shift followed by a day shift.
+  - A nurse should receive at least 2 consecutive days off when a rest period is assigned.
+  - A nurse cannot work more than 2 consecutive weekends.
+  - Daily shift coverage requirements must always be satisfied.
+
+all_preferences:
+  - id: P1
+    text: Nurse 1 would like to work a night shift on Day 4.
+  - id: P2
+    text: Nurse 2 prefers to take Day 8 off.
+  - id: P3
+    text: Nurse 3 would rather work a day shift than a night shift on Day 11.
+  - id: P4
+    text: Nurse 4 prefers not to work on Day 13.
+  - id: P5
+    text: Nurse 5 would like to have a 2-day rest starting from Day 15.
+  - id: P6
+    text: Nurse 6 prefers not to work a night shift on Day 18.
+  - id: P7
+    text: Nurse 7 would like to work a night shift on Day 21.
+  - id: P8
+    text: Nurse 8 prefers a day shift on Day 23.
+  - id: P9
+    text: Nurse 1 prefers to work the same shift as Nurse 2 on Day 26.
+  - id: P10
+    text: Nurse 6 does not want to work on the same shift as Nurse 8 on Day 27.
